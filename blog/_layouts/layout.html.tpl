@@ -15,7 +15,7 @@ Released   : 20120225
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>{% block title %}{% endblock %} - {% block tagline %}{% endblock %}</title>
+<title>{% block title %}{% endblock %} - {{ site.tagline }}</title>
 <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href="{{ site.url }}css/style.css" rel="stylesheet" type="text/css" media="screen" />

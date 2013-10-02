@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/glendmaatita/Heston.git",
-                "reference": "fae6b9ab9cffcd94dac5ecbbe8ef69ac17a7e608"
+                "reference": "61987329a38c13cd1568eb785bba6c48ca2f69f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/glendmaatita/Heston/zipball/fae6b9ab9cffcd94dac5ecbbe8ef69ac17a7e608",
-                "reference": "fae6b9ab9cffcd94dac5ecbbe8ef69ac17a7e608",
+                "url": "https://api.github.com/repos/glendmaatita/Heston/zipball/61987329a38c13cd1568eb785bba6c48ca2f69f3",
+                "reference": "61987329a38c13cd1568eb785bba6c48ca2f69f3",
                 "shasum": ""
             },
             "require": {
@@ -42,7 +42,7 @@
                 }
             ],
             "description": "Simple FTP Wrapper with Git Powered",
-            "time": "2013-09-27 20:19:20"
+            "time": "2013-10-02 22:07:14"
         },
         {
             "name": "michelf/php-markdown",
