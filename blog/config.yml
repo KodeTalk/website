@@ -1,0 +1,13 @@
+config:
+    name: blog
+    url: /
+    title: KodeTalk
+    tagline: Let's Talk About Code
+    pagination: 10
+dir:
+    post: blog/_posts
+    page: blog/_pages
+    draft: blog/_drafts
+    site: blog/_sites
+    asset: blog/_assets
+    layout: blog/_layouts

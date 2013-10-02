@@ -1,0 +1,6 @@
+{
+	"require": {
+		"tolkien/tolkien": "dev-master",
+		"heston/heston": "dev-master"
+	}
+}
