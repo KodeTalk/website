@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : ExtremeSurfing
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20120225
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Tolkien - Let&#039;s Talk About Code</title>
+<link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+  <div id="page">
+    <div id="page-bgtop">
+      <div id="page-bgbtm">
+        <div id="page-content">
+          <div id="header-wrapper">
+            <div id="header">
+              <div id="logo">
+                <h1><a href="#">KodeTalk</a></h1>
+                <p>Let&#039;s Talk About Code</p>
+              </div>
+            </div>
+          </div>
+          <!-- end #header -->
+          <div id="menu-wrapper">
+  <div id="menu">
+    <ul>
+              <li><a href="/index.html">Homepage</a></li>
+              <li><a href="/tolkien.html">Tolkien</a></li>
+          </ul>
+  </div>
+</div>
+<!-- end #menu -->
+<div id="banner"><img src="/images/banner.jpg" width="940" height="300" alt="" /></div>
+          <div id="content">
+            <div class="post">
+	<h2 class="title"><a href="#">Tolkien</a></h2>
+	<div class="entry">
+		<p><a href="http://github.com/glendmaatita/Tolkien">Tolkien</a> adalah sebuah tools generator untuk membuat file web static. Static yang dimaksud adalah tanpa database, tanpa backend sistem apapun, dan berbentuk file HTML biasa. Hal ini memungkinkan web menjadi lebih mudah untuk di-deploy dan menjadi lebih cepat untuk diakses, secepat server anda merender file HTML biasa. Lebih tepatnya lagi, Tolkien khusus digunakan untuk membuat web blog. Blog yang sedang anda baca ini dibangun dengan menggunakan Tolkien.</p>
+
+<p>Tolkien membutuhkan setidaknya PHP versi 5.3 keatas (mendukung Namespace) agar dapat berjalan. Dan lebih baik lagi, jika kita menggunakan PHP versi 5.4 karena pada versi tersebut, PHP sudah mempunyai built-in server yang dapat langsung digunakan oleh Tolkien untuk menjalankan perintah 'serve' sehingga kita bisa langsung melihat tampilan web static kita yang telah digenerate oleh Tolkien.</p>
+
+<p><strong>Instalasi</strong></p>
+
+<p>Cara termudah untuk menginstall Tolkien adalah melalui Composer. Jika kamu tidak tahu apa itu Composer, silakan langsung me-refer ke <a href="http://getcomposer.org">http://getcomposer.org</a> untuk lebih jelasnya.</p>
+
+<p>Untuk menginstall Composer, jalankan perintah dibawah ini</p>
+
+<pre><code>curl -sS https://getcomposer.org/installer | php
+</code></pre>
+
+<p>Perintah diatas akan mendownload file composer.phar. Selanjutnya, buat sebuah folder dan sebuah file didalamnya yang bernama <strong>composer.json</strong> yang berisi</p>
+
+<pre><code>{
+    "require": {
+        "tolkien/tolkien": "v0.5.0"
+    }
+}
+</code></pre>
+
+<p>Lalu jalankan composer melalui command</p>
+
+<pre><code>php composer.phar install
+</code></pre>
+
+<p>Biarkan composer melakukan tugasnya, yaitu mendownload semua package yang dibutuhkan dan menggenerate autoload file agar kita bisa langsung menggunakan Tolkien.</p>
+
+<p><strong>Inisiasi</strong></p>
+
+<p>Untuk membuat blog dengan memanfaatkan Tolkien, terlebih dahulu kita harus menginisiasi blog kita terlebih dahulu. Untuk itu, kita gunakan perintah <em>init</em> seperti dibawah ini</p>
+
+<pre><code>vendor\bin\tolkien init myblog
+</code></pre>
+
+<p>Anggaplah kita ingin membuat blog dengan nama <strong>myblog</strong>, maka perintah diatas akan menghasilkan sebuah folder bernama <strong>myblog</strong> yaang berisi beberapa directory penting dan sebuah file konfigurasi seperti yang terlihat dibawah ini</p>
+
+<pre><code>_assets    // tempat image, css, js file untuk blog kita
+_layouts   // berisi layout untuk post atau page pada blog kita
+_drafts    // berisi post atau page yang masih berupa draft
+_posts     // berisi file-file post
+_pages     // berisi file-file post
+_sites     // berisi file HTML static hasil generate dari Tolkien
+config.yml // file konfigurasi
+</code></pre>
+
+<p>File konfigurasi <strong>config.yml</strong> berisi beberapa variable global seperti nama blog, tagline, dsb seperti yagn terlihat dibawah ini</p>
+
+<pre><code>config:
+    name: myblog
+    url: /
+    title: Your Blog Title
+    tagline: Your Blog Tagline
+    pagination: 10
+dir:
+    post: myblog/_posts
+    page: myblog/_pages
+    draft: myblog/_drafts
+    site: myblog/_sites
+    asset: myblog/_assets
+    layout: myblog/_layouts
+</code></pre>
+
+<p>Isi dari file <strong>config.yml</strong> menggunakan format configurasi YAML. Kita dapat mengganti beberapa value dari variable seperti name, title, atau tagline. Untuk sementara, jangan mengubah value dari variable di dalam section <strong>dir</strong> karena akan mempengaruhi output dari setiap command dari Tolkien</p>
+
+<p><strong>Penggunaan</strong></p>
+
+<p>Untuk membuat post, page atau menggenerate file static, kita dapat menggunakan perintah-perintah yang sudah tersedia pada Tolkien. Untuk membuat sebuah post, kita gunakan perintah dibawah ini, anggap kita ingin membuat sebuah post berjudul <em>Introduction to Rails</em></p>
+
+<pre><code>vendor\bin\tolkien generate myblog post "Introduction to Rails"
+</code></pre>
+
+<p><strong>myblog</strong> adalah nama blog yang kita tentukan saat inisiasi sebelumnya. Perintah diatas akan menghasilkan sebuah file di dalamnya folder <strong>_posts</strong> seperti terlihat dibawah ini</p>
+
+<pre><code>---
+type: post
+layout: post
+title: Introduction to Rails
+date: 2013-09-20
+author:
+  name: Your Name
+  email: Your Email
+  facebook: Your Facebook
+  twitter: Your Twitter
+  github: Your Github
+  signature: Your Signature
+categories: category1
+---
+</code></pre>
+
+<p><em>type: post</em> mengindikasikan bahwa file tersebut adalah file untuk post, <em>layout: post</em> mengindikasikan bahwa kita akan menggunakakan layout <em>post.html.tpl</em> yang berada di folder <strong>_layouts</strong>. Value dari variable dalam section *author* dapat kita ganti dengan data diri kita atau data diri penulis post. Sedangkan untuk <strong>categories</strong>, kita bisa memberikan lebih dari satu category, dipisah oleh tanda koma (,).</p>
+
+<p>Isi dari file seperti diatas masih berupa <em>header</em>, ditandai dengan karakter '---' diatas dan dibawah header sebagai pemisah dari <em>body</em>. Untuk Body atau isi dari post, kita dapat menggunakan format Markdown (recommended!) atau HTML. Cukup letakkan isi dari body di bawah header. Untuk <em>excerpt</em> gunakan variable <em>[more]</em> .</p>
+
+<p><strong>Membuat Page</strong></p>
+
+<p>Sedangkan untuk membuat page, pada intinya sama dengan membuat post. Page sendiri sebenernya adalah Post tapi tanpa categories, author, dan excerpt. Untuk membuat file page, jalankan perintah seperti dibawah ini</p>
+
+<pre><code>vendor\bin\tolkien generate myblog page Contact
+</code></pre>
+
+<p>Perintah diatas akan menghasilkan file page yang berada di dalam folder <strong>_pages</strong>, yang berisi</p>
+
+<pre><code>---
+type: page
+layout: page
+title: Contact
+---
+</code></pre>
+
+<p>Untuk memberi <em>body</em> lakukan hal yang sama seperti saat membuat post. Bedanya pada page tidak mengenal variable <em>[more]</em> untuk excerpt</p>
+
+<p><strong>Compile</strong>
+Agar file-file post dan page kita dapat menjadi file HTML static, kita perlu meng-compile-nya terlebih dahulu melalui perintah <em>compile</em> pada Tolkien, lihat perintah dibawah ini</p>
+
+<pre><code>vendor\bin\tolkien compile myblog
+</code></pre>
+
+<p>Perintah diatas otomatis akan menghasilkan file-file HTML beserta asset-asset (yang sebelumnya berada di folder <strong>_assets/</strong>) ke dalam folder <strong>_sites</strong></p>
+
+<p>Untuk melihat hasilnya, kita dapat menggunakan perintah <em>serve</em> yang terdapat pada Tolkien. Perintah <em>serve</em> ini memanfaatkan PHP built-in webserver yang tersedia pada PHP versi 5.4 keatas. Jalankan perintah <em>serve</em> seperti dibawah ini dan kita dapat langsung melihat web static kita dengan mengarahkan browser ke url <strong>http://localhost:3000</strong></p>
+
+<pre><code>vendor\bin\tolkien serve myblog
+</code></pre>
+
+<p><strong>Layouts</strong></p>
+
+<p>Seluruh layout pada Tolkien berada didalam folder <strong>_layouts</strong> . Sudah terdapat beberapa layout untuk post, index, page, sidebar, dll. Kita dapat memodifikasi layout yang sudah ada atau membuat sendiri file layout sesuai keinginan kita. Layout dibuat dengan menggunakan <a href="http://twig.sensiolabs.com">Twig</a> template engine, sehingga kita dapat memanfaatkan seluruh fitur pada Twig seperti Filters, Functions, Control Structure, Expression, dll untuk membuat layout kita sendiri.</p>
+
+<p><strong>Variable</strong></p>
+
+<p>Tolkien menyediakan beberapa variable global yang dapat kita <em>pass</em> ke dalam layout buatan kita. Variable-variable tersebut diantaranya adalah</p>
+
+<p><strong>Site Variables</strong></p>
+
+<pre><code>site.url        // URL web kita
+site.title      // Judul dari web kita. untuk mengubahnya, lihat file config.yml
+site.tagline    // Tagline dari web kita
+site.posts      // Get all posts
+site.pages      // Get all pages
+site.siteCategories // Get all posts's categories
+</code></pre>
+
+<p><strong>Post Variables</strong></p>
+
+<pre><code>post.title      // Get Post's title
+post.body       // Body
+post.url        // Post's URL
+post.layout     // Layout
+post.excerpt    // Get post's excerpt
+post.categories // Get post's categories
+post.publishDate    // Publish date
+</code></pre>
+
+<p><strong>Post's Author</strong></p>
+
+<pre><code>post.author.name    // Name of Post's Author
+post.author.email   // Author's email
+post.author.signature   // Signature
+post.author.facebook
+post.author.twitter
+post.author.github
+</code></pre>
+
+<p><strong>Page Variables</strong></p>
+
+<pre><code>page.title      // Page's Title
+page.body       // Body
+page.url        // Page's URL
+</code></pre>
+
+<p><strong>Pagination Variables</strong></p>
+
+<p>Pagination sudah tersedia secara built-in di dalam Tolkien (lihat file <strong>config.yml</strong>). Anda dapat menggunakan fitur ini jika anda mau. Jika anda ingin menggunakan fitur pagination, gunakan variabel-variabel sebagai berikut</p>
+
+<pre><code>pagination.posts    // Get semua posts yang ada di suatu page pagination
+pagination.previousPage // Page sebelumnya pada pagination
+pagination.nextPage // Page berikutnya
+pagination.url      // URL suatu page pada pagination
+pagination.numberPage // Nomor page
+</code></pre>
+
+<p>Untuk mengatur jumlah post pada setiap page pada pagination, ubah variabel <strong>pagination</strong> di file <strong>config.yml</strong>.</p>
+
+<p>Gunakan variable diatas agar layout kita menjadi lebih dinamis.</p>
+
+<p><strong>Index HTML</strong></p>
+
+<p>Index atau halaman depan adalah halaman utama dari web anda. Index sebenarnya adalah sebuah page biasa dengan layout khusus yang berbeda dari page lainnya. Untuk membuat Index page, lakukan cara yang sama ketika kita membuat file page</p>
+
+<pre><code>vendor\bin\tolkien generate myblog page index
+</code></pre>
+
+<p>Lalu ubah value dari variable <em>layout</em> dengan index (atau layout buatan anda sendiri) seperti yang terlihat dibawah ini</p>
+
+<pre><code>---
+type: page
+layout: index
+title: Home
+---
+</code></pre>
+
+<p><strong>Deployment</strong></p>
+
+<p>Anda dapat memindahkan file web anda dari komputer lokal ke komputer server dengan berbagai cara yang anda inginkan. Bisa menggunakan ssh, ftp, atau langsung pake flashdisk. Jika anda menggunakan FTP, silakan cek tools saya yang lain yaitu <a href="http://github.com/glendmaatita/Heston">Heston</a> . Untuk menggunakan Heston, tinggal ketikkan perintah dibawah ini</p>
+
+<pre><code>vendor\bin\heston ftp://username:password@ftp.domain.tld:port myblog/_sites/ "_your_comment_"
+</code></pre>
+
+<p>Silakan mencoba tools ini dan buat aktivitas blogging anda menjadi lebih geek dan menyenangkan :) . Untuk kontribusi dan penjelasan lebih lanjut, cek langsung repository disini : <a href="https://github.com/glendmaatita/Tolkien">https://github.com/glendmaatita/Tolkien</a></p>
+  
+	</div>
+</div>
+            <div style="clear: both;">&nbsp;</div>
+          </div>
+          <!-- end #content -->
+          <div id="sidebar">
+	<ul>
+		<li>
+			<h2>Situs apa sih ini?</h2>
+			<p>KodeTalk adalah sebuah kumpulan tulisan seputar web development dan programming. Let's talk about code here.</p>
+		</li>
+		<li>
+			<h2>Kategori</h2>
+			<ul>
+					      	<li><a href="/categories/Notes.html">Notes</a></li>
+	      	      	<li><a href="/categories/Programming.html">Programming</a></li>
+	      	      	<li><a href="/categories/Ruby.html">Ruby</a></li>
+	      			</ul>
+		</li>							
+	</ul>
+</div>
+<!-- end #sidebar -->        </div>
+        <div style="clear: both;">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+  <!-- end #page -->
+</div>
+<div id="footer">
+	<p>Copyright (c) 2012 KodeTalk.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/"> CSS Templates</a>.</p>
+</div><!-- end #footer -->
+</body>
+</html>

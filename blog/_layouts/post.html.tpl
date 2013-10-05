@@ -6,8 +6,8 @@
 	<h2 class="title"><a href="#">{{ post.title }}</a></h2>
 	<p class="meta">Posted by 
 		<a href="#">{{ post.author.name }}</a> on {{ post.publishDate}} &nbsp;&bull;&nbsp;
-		{% for siteCategory in site.siteCategories %}
-		  <a href="{{ siteCategory.url }}" class="permalink">{{ siteCategory.name | capitalize }}</a> 
+		{% for category in post.categories %}
+		  <a href="{{ category.url }}" class="permalink">{{ category.name | capitalize }}</a> 
 	  {% endfor %}
 	</p>
 	<div class="entry">

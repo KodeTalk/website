@@ -515,12 +515,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/glendmaatita/Tolkien.git",
-                "reference": "746621d8eb53eb3c5597a2b7f1f678b91ce99e1c"
+                "reference": "6c35e9b465ebcf8b823a59d36f31841083b632b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/glendmaatita/Tolkien/zipball/746621d8eb53eb3c5597a2b7f1f678b91ce99e1c",
-                "reference": "746621d8eb53eb3c5597a2b7f1f678b91ce99e1c",
+                "url": "https://api.github.com/repos/glendmaatita/Tolkien/zipball/6c35e9b465ebcf8b823a59d36f31841083b632b4",
+                "reference": "6c35e9b465ebcf8b823a59d36f31841083b632b4",
                 "shasum": ""
             },
             "require": {
@@ -549,20 +549,20 @@
                 }
             ],
             "description": "Simple Blogging Engine inspired by Jekyll",
-            "time": "2013-09-29 14:07:12"
+            "time": "2013-10-02 22:05:36"
         },
         {
             "name": "twig/twig",
-            "version": "v1.13.2",
+            "version": "v1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "6d6a1009427d1f398c9d40904147bf9f723d5755"
+                "reference": "224fc55635d544a2ec8edb3592be18db5a093f59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/6d6a1009427d1f398c9d40904147bf9f723d5755",
-                "reference": "6d6a1009427d1f398c9d40904147bf9f723d5755",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/224fc55635d544a2ec8edb3592be18db5a093f59",
+                "reference": "224fc55635d544a2ec8edb3592be18db5a093f59",
                 "shasum": ""
             },
             "require": {
@@ -571,7 +571,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.13-dev"
+                    "dev-master": "1.14-dev"
                 }
             },
             "autoload": {
@@ -598,7 +598,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-08-03 15:35:31"
+            "time": "2013-10-03 06:41:20"
         }
     ],
     "packages-dev": [
