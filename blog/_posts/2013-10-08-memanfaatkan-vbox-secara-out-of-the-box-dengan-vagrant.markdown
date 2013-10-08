@@ -19,7 +19,7 @@ categories: Notes, Ruby
 
 *Anda punya project yang akan dideploy ke server milik client anda yang sudah terinstall CentOS didalamnya. Anda ingin agar saat aplikasi telah di-deploy, tidak ada masalah yang berarti karena perbedaan environment. Server pakai CentOS dengan berbagai library yang spesifik, sedangkan tim developer anda memakai OS yang berbeda2. ada yang pake Windows, Mac, atau Ubuntu.*
 
-*Hal ini akan mengakibatkan beberapa macam permasalahan. Misal, programmer A, si maniak Linux Slackware, telah menyelesaikan suatu **fitur X**, mengetest nya dan ternyata running well, kemudian me-push kode nya ke Git Repo. Kemudian programmer B, pengguna Windows, dengan polosnya melakukan pull ke Git Repo untuk mendapatkan update kode fitur terbaru dan ternyata fitur baru tersebut tidak berjalan. Setelah diselidiki, ternyata si programmer A telah menginstall beberapa library spesifik Slackware agar **fitur X** dapat berjalan*
+*Hal ini akan mengakibatkan beberapa macam permasalahan. Misal, programmer A, si maniak Linux Slackware, telah menyelesaikan suatu **fitur X**, mengetest nya dan ternyata running well, kemudian me-push kode nya ke Git Repo. Kemudian programmer B, pengguna Windows, dengan polosnya melakukan pull ke Git Repo untuk mendapatkan update kode fitur terbaru dan ternyata fitur baru tersebut tidak berjalan. Setelah diselidiki, ternyata si programmer A telah menginstall beberapa library spesifik Slackware agar **fitur X** dapat berjalan*. 
 
 [more]
 
@@ -30,8 +30,11 @@ Skenario diatas memang menjengkelkan, dan itu masih terjadi diantara para develo
 Tapi cara diatas tidak efektif. Pertama, masing-masing developer harus mensetting environment kerjanya terlebih dahulu. Ini buang-buang waktu, belum lagi jika ada developer yang baru masuk di tengah jalan. Kedua adalah, bagaimana jika developer tidak nyaman jika lingkungan kerjanya harus sesuai dengan server production. 
 
 Vagrant akan mengatasi permasalahan-permasalahan diatas. Dengan memanfaatkan vagrant, environment kerja dapat dibuat dan didistribusikan ke seluruh anggota tim project sehingga tim project tersebut akan mendapat banyak keuntungan, semisal :
+
 * Programmer dapat langsung bekerja, tanpa perlu membuang waktu untuk men-setup komputernya agar siap digunakan. Jangan sepelekan masalah ini, walaupun kecil, waktu yang terbuang akan lumayan besar
+
 * Memastikan seluruh anggota tim project, terutama developer, mempunyai environment kerja yang sama persis. Pernah dengar celetukan seperti ini, *"Woy, di komputerku jalan kok, gak tau juga kalo di tempatmu gak jalan?"* . Tenang, Vagrant akan mengatasi masalah klasik ini. *Jadi,  semua programmer harus menggunakan OS yang sama dunk?* . Tidak. Vagrant menyediakan cara yang unik untuk ini dan akan kita bahas lebih lanjut. Intinya, kita tetap dapat bekerja dengan OS sehari-hari kita dan me-running aplikasi kita di virtual machine milik Vagrant secara *on the fly*.
+
 * Dapat digunakan sebagai staging server yang praktis
 
 **Instalasi**
