@@ -58,19 +58,22 @@ Released   : 20120225
 
 <p>Baru-baru ini saya membuat doc yang ditujukan untuk para member di groups (Facebook) <a href="http://www.facebook.com/groups/35688476100">PHP Indonesia</a> . Berikut ini saya copas langsung dari doc saya, versi asli doc beserta diskusi mengenai doc tersebut dapat langsung dilihat <a href="http://www.facebook.com/groups/35688476100/doc/10151630160556101/">disini</a> :)</p>
 
-<p>here we go ...<b>Tentang composer dan pemilihan framework</b><b>
-</b>19 April 2013<b>
-</b>Salah seorang member dari PHP Indonesia, Primanata Ardhitama membuat thread yang berisi pertanyaan sebagai berikut, <b>
-</b><i>"Saya newbie di dunia PHP, mau tanya2 dikit.</i><i>Framework PHP yang support scaffolding db, admin page generator, form generator dengan built in captcha, dan mungkin ORM ada ga ya?"</i><b>
-</b>
-Intinya, Om Primanata ini mencari PHP Framework yang support built-in function yang dia cari yaitu Scaffolding DB, admin page generator, form generator dengan captcha dan ORM. Syarat lainnya adalah framework harus dapat meminimalisir kasus "reinvent the wheel"
-<b>
-</b>Salah seorang member menyarankan untuk mencoba Yii Framework (<a href="http://www.facebook.com/l.php?u=http%3A%2F%2Fyiiframework.com&amp;h=WAQH9Qa1L&amp;s=1" target="_blank" rel="nofollow">http://yiiframework.com</a>) karena framework ini mendukung scaffolding DB, ORM, serta dilengkapi dengan banyak sekali extension yang siap pakai.<b> </b>Lalu Taufan Aditya memberi komentar sebagai berikut,<b>
-</b><i>"Rata-rata semua framework PHP modern, support fitur diatas (kecuali captcha mungkin). Kalau mau lebih fleksibel (Tidak dikungkung satu rule tertentu dari satu framework, yang biasanya berbeda), PHP punya dependency management bernama Composer, yang mirip dengan Gem di Rails dan Maven di Java. Memungkinkan untuk menggunakan komponen cross-platform (DB dari Symfony, Loader/Acl dari Zend, dst) dalam satu project.</i></p>
+<p>here we go ...</p>
 
-<p><i>FW itu cuman tools. Dan pada dasarnya semua punya prinsip yang sama : menyederhanakan persoalan, dengan menyediakan seperangkat alat yang umum, sehingga developer bisa fokus ke tugas dan tujuan yang spesifik. Saya pikir disini banyak yang menggunakan Codeigniter. Ada juga Yii. Ada juga Zend, Cake, Symfony. Beberapa pakai framework yang ndak dikenal kayak Kohana, SLim, Tonic, etc. Semua ini terserah saja. Composer, itu masa depan, buat komunitas PHP developer. Sebab dia memungkinkan komponen-komponen masing2 FW tsb, bisa dipakai secara bersamaan dengan jalan menyediakan standard. Joomla, Drupal dan beberapa CMS bahkan memulai upaya untuk mengekstrak komponen yang support Composer, sebab mereka sadar kedepan developer PHP butuh sesuatu yang ndak lagi dipetak-petakan oleh framework. One code, for all."</i><b>
+<p><b>Tentang composer dan pemilihan framework</b><b>
+</b>19 April 2013<b></p>
+
+<p></b>Salah seorang member dari PHP Indonesia, Primanata Ardhitama membuat thread yang berisi pertanyaan sebagai berikut, <b>
+</b><i>"Saya newbie di dunia PHP, mau tanya2 dikit.</i> <i>Framework PHP yang support scaffolding db, admin page generator, form generator dengan built in captcha, dan mungkin ORM ada ga ya?"</i><b>
 </b>
-Yang menyebabkan diskusi mengalir menuju pembahasan tentang Composer. Seperti yang dikatakan Taufan diatas, composer adalah dependency manager khusus PHP yang memiliki fungsionalitas seperti Gem (Ruby) atau Maven (Java). Composer ini, menurut Taufan adalah tools masa depan untuk developer PHP, karena dengan Composer, memungkinkan komponen-komponen dari masing-masing Framework tsb, bisa dipakai secara bersamaan dengan jalan menyediakan standard, istilahnya 'One code, for all'. Bahkan CMS-CMS mainstream seperti Joomla dan Drupal sudah mengupayakan untuk mengekstrak komponen-komponennya agar support Composer.
+Intinya, Om Primanata ini mencari PHP Framework yang support built-in function yang dia cari yaitu Scaffolding DB, admin page generator, form generator dengan captcha dan ORM. Syarat lainnya adalah framework harus dapat meminimalisir kasus "reinvent the wheel".
+<b></p>
+
+<p></b>Salah seorang member menyarankan untuk mencoba Yii Framework (<a href="http://www.facebook.com/l.php?u=http%3A%2F%2Fyiiframework.com&amp;h=WAQH9Qa1L&amp;s=1" target="_blank" rel="nofollow">http://yiiframework.com</a>) karena framework ini mendukung scaffolding DB, ORM, serta dilengkapi dengan banyak sekali extension yang siap pakai.<b> </b>Lalu Taufan Aditya memberi komentar sebagai berikut,<b>
+</b><i>"Rata-rata semua framework PHP modern, support fitur diatas (kecuali captcha mungkin). Kalau mau lebih fleksibel (Tidak dikungkung satu rule tertentu dari satu framework, yang biasanya berbeda), PHP punya dependency management bernama Composer, yang mirip dengan Gem di Rails dan Maven di Java. Memungkinkan untuk menggunakan komponen cross-platform (DB dari Symfony, Loader/Acl dari Zend, dst) dalam satu project.</i> <i>FW itu cuman tools. Dan pada dasarnya semua punya prinsip yang sama : menyederhanakan persoalan, dengan menyediakan seperangkat alat yang umum, sehingga developer bisa fokus ke tugas dan tujuan yang spesifik. Saya pikir disini banyak yang menggunakan Codeigniter. Ada juga Yii. Ada juga Zend, Cake, Symfony. Beberapa pakai framework yang ndak dikenal kayak Kohana, SLim, Tonic, etc. Semua ini terserah saja. Composer, itu masa depan, buat komunitas PHP developer. Sebab dia memungkinkan komponen-komponen masing2 FW tsb, bisa dipakai secara bersamaan dengan jalan menyediakan standard. Joomla, Drupal dan beberapa CMS bahkan memulai upaya untuk mengekstrak komponen yang support Composer, sebab mereka sadar kedepan developer PHP butuh sesuatu yang ndak lagi dipetak-petakan oleh framework. One code, for all."</i><b>
+</b></p>
+
+<p>Yang menyebabkan diskusi mengalir menuju pembahasan tentang Composer. Seperti yang dikatakan Taufan diatas, composer adalah dependency manager khusus PHP yang memiliki fungsionalitas seperti Gem (Ruby) atau Maven (Java). Composer ini, menurut Taufan adalah tools masa depan untuk developer PHP, karena dengan Composer, memungkinkan komponen-komponen dari masing-masing Framework tsb, bisa dipakai secara bersamaan dengan jalan menyediakan standard, istilahnya 'One code, for all'. Bahkan CMS-CMS mainstream seperti Joomla dan Drupal sudah mengupayakan untuk mengekstrak komponen-komponennya agar support Composer.
 <b>
 </b>Sayangnya, Yii, sebagai salah satu framework PHP yang paling banyak digunakan kemungkinan masih lama sekali agar support Composer, seperti yang dikatakan Peter Jack Kambey (admin Yii Indonesia),</p>
 
