@@ -12,7 +12,23 @@ author:
   signature: "One must fully understand the system and all of its intricacies in order to build a computer program"
 categories: Emacs, Linux
 ---
-![Alt text](/images/emacs-01.png)
+<style>
+#images{
+    text-align:center;
+    margin:50px auto;
+}
+#images a{
+    margin:0px 20px;
+    display:inline-block;
+    text-decoration:none;
+    color:black;
+}
+
+</style>
+<a>
+![Alt text](/images/emacs-01.png "Email yang menandai awal pengembangan GNU/Linux")
+<div class="caption">Email yang menandai awal pengembangan GNU/Linux</div>
+</a>
 
 Kenapa Emacs? Jawabannya : Kenapa Tidak? :)
 
@@ -25,7 +41,11 @@ Emacs ditulis oleh Richard Matthew Stallman, seorang Atheist yang kebetulan juga
 Kunci dari ekstensibilitas Emacs adalah dipergunakannya bahasa Elisp untuk mendefinisikan semua behaviour Emacs. Anda akan terbiasa menemukan Emacs dijejali semua package yang bervariasi mulai dari syntax coloring, shell, project management, email client, calendar (dengan sistem kalendar Masehi, Hijriyah dsb), code completion, error debugger dan seabreg perangkat lainnya. Anda bisa mengembangkan Package Emacs Anda sendiri, dengan terlebih dahulu mempelajari bahas Elisp yang dipergunakan Emacs dan mempelajari titik-titik pengembangan yang disediakan Emacs. Ah, sampai saat ini saya belum berkesempatan menulis package Emacs saya sendiri, namun tentunya itu akan pasti saya lakukan seiring dengan berjalannya waktu.. Insya Allah.
 
 Untuk memulai Emacs, Anda bisa mulai dari lingkungan apa saja : Windows, OSX, Linux, BSD, FreeBSD dan bahkan Android. Anda bisa memulainya di linkungan console/terminal atau X-Windows/Windows GUI. Silahkan download dari situs resmi [Emacs](http://www.gnu.org/software/emacs/). Jalankan sesuai dengan lingkungan kerja Anda. Ketikkan emacs jika Anda sedang berada di dalam Terminal/Console. Berikut contoh dari tampilan awal Emacs :
+
+<a>
 ![Alt text](/images/emacs-02.png)
+<div class="caption">Tampilan awal Emacs dalam modus Konsol/Terminal/TTY</div>
+</a>
 
 Sesi Emacs ini dijalankan dalam modus TTY/Terminal pada Ubuntu 12.0.4 LTS di dalam Virtual Box yang berjalan di lingkungan OSX (phew...). Ya, benar, saya bukan pemakai murni Linux, namun campuran dari OSX, Windows dan Linux. Karena, menyenangkan sekali bisa mengembangkan solusi untuk berbagai Sistem Operasi yang ada. Jalan yang bisa ditempuh adalah dengan menggunakan aplikasi Virtualisasi, semisal VirtualBox. Pilihan saya untuk mesin yang akan menjalankan lingkungan virtualisasi ini adalah OSX, namun sebaiknya penjelasan lengkapnya saya sisihkan untuk artikel selanjutnya.
 
@@ -39,6 +59,7 @@ Jika ini pertama kali Anda melihat anehnya syntax untuk menulis perintah Emacs t
 C adalah tombol Control. C-x senada dengan CTRL+x. Yaitu, tekan tombol Ctrl, jangan dilepas, tekan tombol x, lepaskan. Adapun C-x C-f, berarti tekan tombol CTRL sekali, kemudian tekan tombol x dan f berurutan.
 
 Untuk melengkapi contoh selanjutnya, berikut saya tuliskan perintah yang berkenaan dengan Windowing/Frame :
+      
       * C-x 1 : memaksimalkan frame yang aktif memenuhi seluruh layar
       * C-x 2 : membagi layar menjadi dua frame secara horizontal
       * C-x 3 : membagi layar menjadi dua frame secara vertikal
@@ -47,37 +68,48 @@ Untuk melengkapi contoh selanjutnya, berikut saya tuliskan perintah yang berkena
 
 
 Perhatikan bahwa saya tidak menuliskan C-x 1 menjadi C-x C-1. Artinya tekan tombol Ctrl, jangan dilepaskan, tekan tombol x, lepaskan dan tekan tombol 1. Yak, betul begitu...
+
+<a>
 ![Alt text](/images/emacs-03.png)
+<div class="caption">Multiple Frame dengan Emacs</div>
+</a>
 
 Pada Emacs, Window/Frame tidak selalu adalah file teks yang sedang diedit. Sebagai contoh, pada gambar di atas, saya menggunakan Eshell (Emacs shell, yaitu shell yang berjalan di dalam Emacs) pada suatu Frame tersendiri. Dan jelas, tampilan dari Eshell bukanlah file teks.
 
 Bedakan antara Buffer dan Frame. Buffer adalah isi dari file teks (atau apapun) yang sedang diedit di Emacs. Buffer tidak mesti tampil di dalam Frame yang aktif. Menutup frame tidak akan menutup Buffer, namun jika menutup buffer berarti sekaligus menutup frame yang terkait. Berikut saya tuliskan perintah elementer yang berkenaan dengan operasi pada buffer:
+      
       * C-x k : menutup buffer
-      * C-x b : pergi ke buffer tertentu (ketikkan saja nama buffer/nama file, pada command line Emacs)
+      * C-x b : pergi ke buffer tertentu
 
 Saya nyaris tidak pernah melakukan operasi pada buffer lebih dari dua perintah tersebut.
 
 Berikut saya tuliskan shortcut untuk pergerakan dan berbagai fungsi lain yang sering saya pakai
+      
       * M-< : ke awal buffer
       * M-> : ke akhir buffer
       * C-a : ke awal baris. Atau tombol HOME 
-      * C-e : ke akhir baris. Atau tombol END (meski di terminal OSX, dua tombol ini berperilaku yang berbeda : pergi ke awal/akhir terminal...)
-      * C-s : pencarian teks, yang setelah Anda menekan tombol ENTER, kursor akan bergerak ke lokasi kata tersebut. Saya teramat sering pergunakan teknik ini. Tekan C-s lagi untuk menjadi teks yang sama
+      * C-e : ke akhir baris. Atau tombol END
+      * C-s : pencarian teks
       * C-z : undo
-      * C-space : memulai tanda untuk melakukan seleksi, gerakkan kursor dengan berbagai teknik pergerakan, dan sekali lagi C-s untuk mengakhiri seleksi, kemudian ...
+      * C-space : memulai tanda untuk melakukan seleksi
       * C-c/C-w : untuk mengkopi/cut teks tersebut ke clipboard dan .. 
       * C-y/C-v : untuk mempaste clipboard ke lokasi kursor aktif
       * M-d : menghapus satu kata pada posisi cursor
-      * C-g : membatalkan perintah Emacs. Misal Anda ingin membuka file, C-x C-f, namun setelah C-x, Anda ingin membatalkan aksi, maka batalkan saja dengan C-g
+      * C-g : membatalkan perintah Emacs
 
 M-.. ? M maksudnya adalah META atau ALT :)
              
 
-Terakhir, untuk mengkustomasi Emacs dari sifat bawaannya, Anda bisa membuat file .emacs pada direktori HOME Anda. Bagi Anda yang bekerja pada lingkungan *nix, Anda jelas tahu dimana letak direktori HOME Anda. Namun, tidak demikian bagi pemakai Windows. Pasti Anda kurang jelas yang mana yang direktori HOME : My Documents? Desktop? C:\ ? Jawabannya berbeda-beda tergantung sistem operasi Windows. Membingungkan sekali. Jika di Windows 7, folder C:\Users\<nama login> adalah HOME folder Anda. Namun, agar tidak bingung, buat saja Environment Variabel HOME dan arahkan ke folder yang ingin Anda jadikan sebagai HOME folder bagi Emacs. 
+Terakhir, untuk mengkustomasi Emacs dari sifat bawaannya, Anda bisa membuat file .emacs pada direktori HOME Anda. Bagi Anda yang bekerja pada lingkungan *nix, Anda jelas tahu dimana letak direktori HOME Anda. Namun, tidak demikian bagi pemakai Windows. Pasti Anda kurang jelas yang mana yang direktori HOME : My Documents? Desktop? C:\ ? Jawabannya berbeda-beda tergantung sistem operasi Windows. Membingungkan sekali. Jika di Windows 7, folder C:\Users\NAMA_LOGIN_ANDA adalah HOME folder Anda. Namun, agar tidak bingung, buat saja Environment Variabel HOME dan arahkan ke folder yang ingin Anda jadikan sebagai HOME folder bagi Emacs. 
+
+<a>
 ![Alt text](/images/emacs-04.png)
+<div class="caption">Tempat HOME folder pada Windows</div>
+</a>
 
 Adapun mengkustomasi Emacs akan bisa membuat Anda semakin mengenali Emacs, dan seringkali file .emacs ini akan membesar dan semakin kompleks (karena file ini sendiri menggunakan bahasa Elisp). Untuk itu Anda akan mudah menemukan file kustomasi .emacs disimpan ke dalam Github secara publik untuk dapat digunakan siapa saja. Atau, dipergunakan perseorangan untuk dapat di-clone ke berbagai sistem operasi yang menggunakannya. Saya sendiri memmiliki repository .emacs dan paket-paket pelengkapnya di [Github](https://github.com/swdevbali/.emacs.d). Clone saja repo tersebut dan letakkan di folder HOME. Kemudian, buat simbolic link dari .emacs.d/.emacs ke folder HOME Anda. Pada kustomasi tersebut, saya setup beberapa package dan shortcut key yang penting :
-      * C <left/right arrow> : pindah dari konfigurasi frame satu ke frame lainnya. Misalnya saat ini Anda sedang mengedit satu layar penuh file todo.org, dan kemudian membagi layar menjadi dua, maka Anda bisa kembali ke konfigurasi frame sebelumnya dengan menekan tombol CTRL, lepaskan dan tekan tombol panah kiri. Tekan tombol panah kanan untuk menuju bentuk konfigurasi berikutnya.
+      
+      * C <left/right arrow> : pindah dari konfigurasi frame satu ke frame lainnya.
       * Paket ido untuk file completion pada command bar Emacs.
       * Mensetup Emacs tanpa scrollbar, menubar 
       * ... dan masih banyak lagi :)
