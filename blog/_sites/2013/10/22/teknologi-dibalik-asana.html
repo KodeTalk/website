@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : ExtremeSurfing
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20120225
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Teknologi Dibalik Asana - Let&#039;s Talk About Code</title>
+<link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+  <div id="page">
+    <div id="page-bgtop">
+      <div id="page-bgbtm">
+        <div id="page-content">
+          <div id="header-wrapper">
+            <div id="header">
+              <div id="logo">
+                <h1><a href="#">KodeTalk</a></h1>
+                <p>Let&#039;s Talk About Code</p>
+              </div>
+            </div>
+          </div>
+          <!-- end #header -->
+          <div id="menu-wrapper">
+  <div id="menu">
+    <ul>
+              <li><a href="/index.html">Homepage</a></li>
+              <li><a href="/tolkien.html">Tolkien</a></li>
+          </ul>
+  </div>
+</div>
+<!-- end #menu -->
+<div id="banner"><img src="/images/banner.jpg" width="940" height="300" alt="" /></div>
+          <div id="content">
+            <div class="post">
+	<h2 class="title"><a href="#">Teknologi Dibalik Asana</a></h2>
+	<p class="meta">Posted by 
+		<a href="#">Glend Maatita</a> on October 22, 2013 &nbsp;&bull;&nbsp;
+				  <a href="/categories/Notes.html" class="permalink">Notes</a> 
+	  		  <a href="/categories/Review.html" class="permalink">Review</a> 
+	  	</p>
+	<div class="entry">
+		<p>Sudah pernah dengar Asana? Asana adalah project management tools and collaboration, yang menawarkan simplicity dan tampilan yang menawan untuk memudahkan kita mengatur task-task di project kita. Asana didirikan oleh salah seorang founder Facebook yaitu, <a href="http://en.wikipedia.org/wiki/Dustin_Moskovitz">Dustin Moskovits</a>. Asana sangat fleksibel dan memudahkan kita untuk men-track seluruh task di project kita. Untuk tahu lebih jelas tentang Asana, silakan langsung menuju website <a href="https://asana.com/">Asana</a> karena artikel ini tidak membahas step by step cara menggunakan Asana. Anda bisa langsung mencoba sendiri</p>
+
+<p><img src="/images/asana.jpg" alt="Alt text" /></p>
+
+<p>Yang akan kita bahas disini adalah teknologi di balik layar Asana dan tools apa saja yang digunakan untuk mendukung workflow didalam tim internal Asana. Oke langsung saja..</p>
+
+<p>Greg Slovacek, salah seorang developer yang bekerja di Asana membocorkan sedikit beberapa teknologi yang digunakan oleh timnya di Asana untuk membangun project management software yang reliable dan scalable. Berikut rangkuman dari Greg Slovacek seperti yang ditulis di situs tanya jawab <a href="http://www.quora.com/Asana/What-technologies-is-Asana-built-with">Quora</a></p>
+
+<p>Asana menggunakan beberapa teknologi yang sudah proven untuk membangun software yang handal, diantaranya adalah</p>
+
+<p><strong>1. Amazon Web Services</strong></p>
+
+<p>Asana menggunakan AWS sebagai platform cloud computing mereka. Alasannya sederhana, AWS dianggap sebagai platform cloud computing yang paling solid saat ini. Sampai saat ini, semua production services Asana berjalan diatas Amazon EC2 instances.</p>
+
+<p><strong>2. MySQL</strong></p>
+
+<p>Asana menggunakan MySQL untuk databasenya. Tepatnya Mysql dengan InnoDB yang berjalan diatas <em>Amazon Relational Database Service (Amazon RDS)</em></p>
+
+<p><strong>3.Memcache</strong></p>
+
+<p>Untuk distributed caching, Asana menggunakan <em>Amazon ElastiCache</em></p>
+
+<p><strong>4. Kraken</strong></p>
+
+<p>Saya sendiri kurang begitu mengerti kegunaan dari Kraken ini. Yang jelas, tools ini buatan internal dari tim developer Asana dan telah di-opensource-kan. Silakan cek reponya <a href="https://github.com/Asana/kraken">disini</a></p>
+
+<p><strong>5. Elastic Search</strong></p>
+
+<p>Asana menyediakan fitur untuk pencarian task, dan engine searching dibelakangnya adalah <a href="http://www.elasticsearch.org/">Elastic Search</a>. Sebuah search engine berbasis Apache Lucene</p>
+
+<p><strong>6. Scribe</strong></p>
+
+<p>Asana menggunakan <a href="https://github.com/facebook/scribe">Scribe</a> untuk logging pada sisi backend, yaitu terutama untuk mencatat setiap event dan behaviour yang dilakukan oleh user. Yang nantinya log tersebut akan dianalysis dan digunakan untuk re-indexing data untuk keperluan searching</p>
+
+<p><strong>7. v8cgi</strong></p>
+
+<p>v8cgi sekarang lebih dikenal dengan nama <a href="http://nodejs.org/">NodeJS</a>. Bukan sesuatu yang mengejutkan jika Asana memakai NodeJS untuk backendnya. Salah satu concern Asana adalah tentang data real time, dan NodeJS sangat cocok untuk menghandle hal tersebut. Selain itu, dengan menggunakan NodeJS, developer dapat men-share sebagian besar kode untuk sisi server dan client, karena sama-sama menggunakan bahasa pemograman Javascript.</p>
+
+<p><strong>8. A custom dispatcher ("JSWeb")</strong></p>
+
+<p>Dibuat dengan menggunakan Erlang, berjalan di semua webserver production Asana, dan bertugas untuk mengirim setiap request ke NodeJS process</p>
+
+<p><strong>9. Nginx</strong></p>
+
+<p>Berada tepat didepan Custom dispatcher dan mengurusi semua hal yang berada di level HTTP protocol seperti keepalive, gzip, request logging, dll.</p>
+
+<p><strong>10. haproxy + stunnel</strong></p>
+
+<p>Asana menggunakan HAProxy untuk Load Balancer</p>
+
+<p>Teknologi-teknologi diatas sebagian besar adalah teknologi yang sudah dikenal luas dan merupakan hal yang cerdas jika menggunakannya untuk membangun suatu sistem yang stabil dan scalable</p>
+
+<blockquote>
+  <p><em>Often, to do great things we must stand on the shoulders of giants.</em> , <strong>- Greg Slovacek</strong></p>
+</blockquote>
+
+<p>Sedangkan tools untuk mendukung workflow kerja dan kolaborasi tim developer, Asana menggunakan beberapa tools sebagai berikut</p>
+
+<p><strong>1. Chocolate</strong></p>
+
+<p>Sepertinya, para developer Asana sangat menyukai coklat sampai-sampai Greg Slovacek memasukkan ini ke perlengkapan wajib saat coding :)</p>
+
+<p><strong>2. Asana</strong></p>
+
+<p>Aneh rasanya jika perusahaan yang membuat tools project management tidak memakai produknya sendiri untuk memanage project di kantornya :) . jadi jangan berharap orang-orang di Asana memakai tools semacam Microsoft Project atau Basecamp</p>
+
+<p><strong>3. Google Docs</strong></p>
+
+<p>Google Docs adalah tools kolaborasi kelas wahid untuk mengatur hal-hal yang berkaitan dengan dokumen. Selain Google Docs, Asana juga sempat menggunakan Google Mail, yang sekarang telah di-replace menggunakan fitur Inbox di Asana</p>
+
+<p><strong>4. Git</strong></p>
+
+<p>Jaman sekarang, tidak pakai Git justru hal yang aneh. Sepertinya tidak perlu saya jelaskan lagi kenapa tim developer di Asana, dan jutaan tim developer lainnya menggunakan Git</p>
+
+<p><strong>5. Phabricator</strong></p>
+
+<p>Code Review tools asli buatan internal Facebook. Cek tools yang amazing ini <a href="http://phabricator.org/">disini</a></p>
+
+<p><strong>6. Jenkins</strong></p>
+
+<p><a href="http://jenkins-ci.org/">Jenkins</a> udah jelas untuk Continous Integration. Topik menarik ini akan dibahas di beberapa artikel berikutnya :)</p>
+
+<p><strong>7. Minotaur</strong></p>
+
+<p>Tools buatan internal Asana yang digunakan sebagai error-reporter yang terintegrasi penuh dengan Asana via API. Tiap terjadi crash di sistem milik Asana, Minotaur akan mencatat dan menggenerate report. Bahkan, jika ada developer yang me-push code dan code tersebut menyebabkan problem, Minotaur secara otomatis akan mengeluarkan alert</p>
+
+<p><strong>8. Desk</strong></p>
+
+<p>Asana menggunakan <a href="http://www.desk.com/">Desk</a> untuk helpdesk system</p>
+
+<p><strong>9. Recurly</strong></p>
+
+<p>Asana menggunakan <a href="http://www.recurly.com/">Recurly</a> untuk billing system</p>
+
+<p>Bagiamana? Kita bisa belajar bagaimana perusahaan sekelas Asana memanfaatkan teknologi yang ada untuk mengembangkan aplikasi yang handal. <em>No reinvent the wheel, stand on the shoulders of giants, and just focus on your product development</em>. Lain kali akan kita bahas dibalik layar website-website besar lainnya.</p>
+
+<p>Happy Coding :)</p>
+ 
+	</div>
+</div>
+            <div style="clear: both;">&nbsp;</div>
+          </div>
+          <!-- end #content -->
+          <div id="sidebar">
+	<ul>
+		<li>
+			<h2>Situs apa sih ini?</h2>
+			<p>KodeTalk adalah sebuah kumpulan tulisan seputar web development dan programming. Let's talk about code here.</p>
+		</li>
+		<li>
+			<h2>Kategori</h2>
+			<ul>
+					      	<li><a href="/categories/Notes.html">Notes</a></li>
+	      	      	<li><a href="/categories/Review.html">Review</a></li>
+	      	      	<li><a href="/categories/Git.html">Git</a></li>
+	      	      	<li><a href="/categories/Emacs.html">Emacs</a></li>
+	      	      	<li><a href="/categories/Linux.html">Linux</a></li>
+	      	      	<li><a href="/categories/PHP.html">Php</a></li>
+	      	      	<li><a href="/categories/Ruby.html">Ruby</a></li>
+	      	      	<li><a href="/categories/Programming.html">Programming</a></li>
+	      			</ul>
+		</li>							
+	</ul>
+</div>
+<!-- end #sidebar -->        </div>
+        <div style="clear: both;">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+  <!-- end #page -->
+</div>
+<div id="footer">
+	<p>Copyright (c) 2012 KodeTalk.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/"> CSS Templates</a>.</p>
+</div><!-- end #footer -->
+</body>
+</html>
