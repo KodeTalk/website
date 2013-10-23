@@ -1,6 +1,12 @@
 {
+	"repositories": [
+		{
+		  "type": "vcs",
+		  "url": "https://github.com/glendmaatita/Tolkien"
+		}
+	],
 	"require": {
-		"tolkien/tolkien": "dev-master",
+		"tolkien/tolkien": "dev-elfbranch",
 		"heston/heston": "dev-master"
 	}
 }

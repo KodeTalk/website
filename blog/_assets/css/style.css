@@ -288,6 +288,10 @@ img.aligncenter {
 	color: #FFFFFF;
 }
 
+.pagination-right {
+  float: right !important;
+}
+
 /* Sidebar */
 
 #sidebar {

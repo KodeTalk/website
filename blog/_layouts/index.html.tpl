@@ -17,12 +17,12 @@
 	</div>
 	{% endfor %}
 	{% if pagination.previousPage is not null %}
-	<div class="col-md-3">
+	<div class="pagination-left">
 		<a href="{{ pagination.previousPage.url }}"><< Sebelumnya</a>
 	</div>
 	{% endif %}
 	{% if pagination.nextPage is not null %}
-	<div class="col-md-3 pull-right">
+	<div class="pagination-right">
 		<a href="{{ pagination.nextPage.url }}">Berikutnya >></a>
 	</div>
 	{% endif %}

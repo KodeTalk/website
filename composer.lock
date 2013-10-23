@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "b71ac6e1944ea169fb9d4f836d2a233c",
+    "hash": "a4455e4dc23060fe8f903eed21c9c51c",
     "packages": [
         {
             "name": "heston/heston",
@@ -341,16 +341,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "3.7.27",
+            "version": "3.7.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "4b024e753e3421837afbcca962c8724c58b39376"
+                "reference": "3b97c8492bcafbabe6b6fbd2ab35f2f04d932a8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4b024e753e3421837afbcca962c8724c58b39376",
-                "reference": "4b024e753e3421837afbcca962c8724c58b39376",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3b97c8492bcafbabe6b6fbd2ab35f2f04d932a8d",
+                "reference": "3b97c8492bcafbabe6b6fbd2ab35f2f04d932a8d",
                 "shasum": ""
             },
             "require": {
@@ -411,7 +411,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-09-16 03:09:52"
+            "time": "2013-10-17 07:27:40"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -511,16 +511,16 @@
         },
         {
             "name": "tolkien/tolkien",
-            "version": "dev-master",
+            "version": "dev-elfbranch",
             "source": {
                 "type": "git",
                 "url": "https://github.com/glendmaatita/Tolkien.git",
-                "reference": "ce039fbad4cac3cb8525dd9c4aa99982ed33cbf2"
+                "reference": "53443d8f3ee4a843226e4e74318002872aca540b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/glendmaatita/Tolkien/zipball/ce039fbad4cac3cb8525dd9c4aa99982ed33cbf2",
-                "reference": "ce039fbad4cac3cb8525dd9c4aa99982ed33cbf2",
+                "url": "https://api.github.com/repos/glendmaatita/Tolkien/zipball/53443d8f3ee4a843226e4e74318002872aca540b",
+                "reference": "53443d8f3ee4a843226e4e74318002872aca540b",
                 "shasum": ""
             },
             "require": {
@@ -538,7 +538,6 @@
                     "Tolkien": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -549,20 +548,24 @@
                 }
             ],
             "description": "Simple Blogging Engine inspired by Jekyll",
-            "time": "2013-10-13 02:02:33"
+            "support": {
+                "source": "https://github.com/glendmaatita/Tolkien/tree/elfbranch",
+                "issues": "https://github.com/glendmaatita/Tolkien/issues"
+            },
+            "time": "2013-10-22 17:49:23"
         },
         {
             "name": "twig/twig",
-            "version": "v1.14.0",
+            "version": "v1.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "224fc55635d544a2ec8edb3592be18db5a093f59"
+                "reference": "8873d7593ad7c120004f177c0fd01459b383c9cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/224fc55635d544a2ec8edb3592be18db5a093f59",
-                "reference": "224fc55635d544a2ec8edb3592be18db5a093f59",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/8873d7593ad7c120004f177c0fd01459b383c9cb",
+                "reference": "8873d7593ad7c120004f177c0fd01459b383c9cb",
                 "shasum": ""
             },
             "require": {
@@ -598,7 +601,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-10-03 06:41:20"
+            "time": "2013-10-15 19:17:38"
         }
     ],
     "packages-dev": [

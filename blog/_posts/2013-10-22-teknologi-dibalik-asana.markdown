@@ -10,7 +10,7 @@ author:
   twitter: Your Twitter
   github: Your Github
   signature: Your Signature
-categories: Notes, Review
+categories: notes, Review
 ---
 
 Sudah pernah dengar Asana? Asana adalah project management tools and collaboration, yang menawarkan simplicity dan tampilan yang menawan untuk memudahkan kita mengatur task-task di project kita. Asana didirikan oleh salah seorang founder Facebook yaitu, [Dustin Moskovits](http://en.wikipedia.org/wiki/Dustin_Moskovitz). Asana sangat fleksibel dan memudahkan kita untuk men-track seluruh task di project kita. Untuk tahu lebih jelas tentang Asana, silakan langsung menuju website [Asana](https://asana.com/) karena artikel ini tidak membahas step by step cara menggunakan Asana. Anda bisa langsung mencoba sendiri
