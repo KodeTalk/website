@@ -151,4 +151,4 @@ Lebih simple bukan? Lalu pertanyaannya, bagaimana kalo saya sudah mempunyai ratu
 
 Nah, sekian dulu pengenalan haml di artikel ini, untuk lebih jelas dan lengkapnya anda dapat melihat reference-nya [HAML Reference](http://haml.info/docs/yardoc/file.REFERENCE.html)
 
-Happy Coding :)
+Happy Coding and Enjoy HAML!!

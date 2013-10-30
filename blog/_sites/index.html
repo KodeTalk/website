@@ -47,6 +47,37 @@ Released   : 20120225
 <div id="banner"><img src="/images/banner.jpg" width="940" height="300" alt="" /></div>
           <div id="content">
             		<div class="post">
+		<h2 class="title"><a href="/2013/10/30/pengenalan-silex-part-3-crud-dengan-doctrine-dbal.html">Pengenalan Silex Part 3 - CRUD dengan Doctrine DBAL</a></h2>
+		<p class="meta">Posted by <a href="#">Glend Maatita</a> on October 30, 2013
+			&nbsp;&bull;&nbsp; <a href="/2013/10/30/pengenalan-silex-part-3-crud-dengan-doctrine-dbal.html" class="permalink">Full article</a></p>
+		<div class="entry">
+					  	<p><a href="http://www.doctrine-project.org/projects/dbal.html">Doctrine DBAL</a> atau Database Access Layer adalah bagian dari project Doctrine ORM yang hanya menyediakan abstraksi ke database dengan memanfaatkan PDO. Tidak seperti induk project nya, yaitu Doctrine ORM yang menyediakan berbagai macam fitur dan memakai arsitektur yang canggih yaitu Data Mapper, Doctrine DBAL lebih simple dan menyediakan hanya beberapa fungsionalitas dasar operasi database seperti database retrieval &amp; manipulation dengan memanfaatkan PDO, plus beberapa fitur tambahan seperti Query Builder untuk mempermudah kita menulis Query SQL.</p>
+
+<p>Kita akan menggunakan DBAL yang sederhana ini untuk membuat aplikasi CRUD sederhana. Kita sudah membuat beberapa routing dan sekarang saatnya kita menulis code untuk menghandle masing-masing routing yang telah kita buat sebelumnya..</p>
+
+		  		</div>
+	</div>
+		<div class="post">
+		<h2 class="title"><a href="/2013/10/25/pengenalan-silex-part-2-restful-routing.html">Pengenalan Silex Part 2 - Restful Routing</a></h2>
+		<p class="meta">Posted by <a href="#">Glend Maatita</a> on October 25, 2013
+			&nbsp;&bull;&nbsp; <a href="/2013/10/25/pengenalan-silex-part-2-restful-routing.html" class="permalink">Full article</a></p>
+		<div class="entry">
+					  	<p>Di part ini kita akan membuat contoh aplikasi Restfull sederhana dengan menggunakan Silex Framework. Disamping itu, kita juga akan mengintegrasikan Silex dengan beberapa komponen Symfony lainnya seperti <a href="http://twig.sensiolabs.org/">Twig Template Engine</a> dan <a href="http://www.doctrine-project.org/projects/dbal.html">Doctrine DBAL</a>. Here we go..</p>
+
+		  		</div>
+	</div>
+		<div class="post">
+		<h2 class="title"><a href="/2013/10/24/pengenalan-silex-framework-part-1.html">Pengenalan Silex Framework Part 1</a></h2>
+		<p class="meta">Posted by <a href="#">Glend Maatita</a> on October 24, 2013
+			&nbsp;&bull;&nbsp; <a href="/2013/10/24/pengenalan-silex-framework-part-1.html" class="permalink">Full article</a></p>
+		<div class="entry">
+					  	<p>Silex adalah PHP Micro-framework berbasis Symfony2. Karena bentuknya adalah micro-framework, Silex sejatinya hanya menyediakan fungsi dasar suatu framework, yaitu <strong>Routing</strong>. Yup, framework ini hanya menyediakan fungsi routing saja, dan tidak menyediakan berbagai macam fungsionalitas serpti yang disediakan full stack framework lainnya semisal Laravel atau Symfony yang sampai menyertakan fitur ORM atau form-helper. Contoh micro-framework lainnya yang patut anda coba adalah <a href="http://www.slimframework.com/">Slim</a> atau <a href="http://www.peej.co.uk/tonic/">Tonic</a>. Silex dibuat oleh <a href="http://fabien.potencier.org/">Fabien Potencier</a> aka Fabpot sebagai bagian dari proyek Symfony.</p>
+
+<p><img src="/images/silex.jpg" alt="Alt text" /></p>
+
+		  		</div>
+	</div>
+		<div class="post">
 		<h2 class="title"><a href="/2013/10/23/pengenalan-haml.html">Pengenalan HAML</a></h2>
 		<p class="meta">Posted by <a href="#">Glend Maatita</a> on October 23, 2013
 			&nbsp;&bull;&nbsp; <a href="/2013/10/23/pengenalan-haml.html" class="permalink">Full article</a></p>
@@ -171,87 +202,6 @@ Dan, jawaban saya (hampir) selalu sama, "Go ahead.. with PHP". Dan pertanyaan be
 
 		  		</div>
 	</div>
-		<div class="post">
-		<h2 class="title"><a href="/2013/10/10/tentang-composer-dan-pemilihan-framework-php.html">Tentang Composer dan Pemilihan Framework PHP</a></h2>
-		<p class="meta">Posted by <a href="#">Glend Maatita</a> on October 10, 2013
-			&nbsp;&bull;&nbsp; <a href="/2013/10/10/tentang-composer-dan-pemilihan-framework-php.html" class="permalink">Full article</a></p>
-		<div class="entry">
-					  	<p><img src="/images/composer.png" alt="Alt text" /></p>
-
-<p>Baru-baru ini saya membuat doc yang ditujukan untuk para member di groups (Facebook) <a href="http://www.facebook.com/groups/35688476100">PHP Indonesia</a> . Berikut ini saya copas langsung dari doc saya, versi asli doc beserta diskusi mengenai doc tersebut dapat langsung dilihat <a href="http://www.facebook.com/groups/35688476100/doc/10151630160556101/">disini</a> :)</p>
-
-<p>here we go ...</p>
-
-<p><b>Tentang composer dan pemilihan framework</b><b>
-</b>19 April 2013<b></p>
-
-<p></b>Salah seorang member dari PHP Indonesia, Primanata Ardhitama membuat thread yang berisi pertanyaan sebagai berikut, <b>
-</b><i>"Saya newbie di dunia PHP, mau tanya2 dikit.</i> <i>Framework PHP yang support scaffolding db, admin page generator, form generator dengan built in captcha, dan mungkin ORM ada ga ya?"</i><b>
-</b>
-Intinya, Om Primanata ini mencari PHP Framework yang support built-in function yang dia cari yaitu Scaffolding DB, admin page generator, form generator dengan captcha dan ORM. Syarat lainnya adalah framework harus dapat meminimalisir kasus "reinvent the wheel".
-<b></p>
-
-<p></b>Salah seorang member menyarankan untuk mencoba Yii Framework (<a href="http://www.facebook.com/l.php?u=http%3A%2F%2Fyiiframework.com&amp;h=WAQH9Qa1L&amp;s=1" target="_blank" rel="nofollow">http://yiiframework.com</a>) karena framework ini mendukung scaffolding DB, ORM, serta dilengkapi dengan banyak sekali extension yang siap pakai.<b> </b>Lalu Taufan Aditya memberi komentar sebagai berikut,<b>
-</b><i>"Rata-rata semua framework PHP modern, support fitur diatas (kecuali captcha mungkin). Kalau mau lebih fleksibel (Tidak dikungkung satu rule tertentu dari satu framework, yang biasanya berbeda), PHP punya dependency management bernama Composer, yang mirip dengan Gem di Rails dan Maven di Java. Memungkinkan untuk menggunakan komponen cross-platform (DB dari Symfony, Loader/Acl dari Zend, dst) dalam satu project.</i> <i>FW itu cuman tools. Dan pada dasarnya semua punya prinsip yang sama : menyederhanakan persoalan, dengan menyediakan seperangkat alat yang umum, sehingga developer bisa fokus ke tugas dan tujuan yang spesifik. Saya pikir disini banyak yang menggunakan Codeigniter. Ada juga Yii. Ada juga Zend, Cake, Symfony. Beberapa pakai framework yang ndak dikenal kayak Kohana, SLim, Tonic, etc. Semua ini terserah saja. Composer, itu masa depan, buat komunitas PHP developer. Sebab dia memungkinkan komponen-komponen masing2 FW tsb, bisa dipakai secara bersamaan dengan jalan menyediakan standard. Joomla, Drupal dan beberapa CMS bahkan memulai upaya untuk mengekstrak komponen yang support Composer, sebab mereka sadar kedepan developer PHP butuh sesuatu yang ndak lagi dipetak-petakan oleh framework. One code, for all."</i><b>
-</b></p>
-
-<p>Yang menyebabkan diskusi mengalir menuju pembahasan tentang Composer. Seperti yang dikatakan Taufan diatas, composer adalah dependency manager khusus PHP yang memiliki fungsionalitas seperti Gem (Ruby) atau Maven (Java). Composer ini, menurut Taufan adalah tools masa depan untuk developer PHP, karena dengan Composer, memungkinkan komponen-komponen dari masing-masing Framework tsb, bisa dipakai secara bersamaan dengan jalan menyediakan standard, istilahnya 'One code, for all'. Bahkan CMS-CMS mainstream seperti Joomla dan Drupal sudah mengupayakan untuk mengekstrak komponen-komponennya agar support Composer.
-<b>
-</b>Sayangnya, Yii, sebagai salah satu framework PHP yang paling banyak digunakan kemungkinan masih lama sekali agar support Composer, seperti yang dikatakan Peter Jack Kambey (admin Yii Indonesia),</p>
-
-<p><em>"Saya udah pelajari sedikit soal composer dan rasa2nya Yii with composer masih relatif lama. Butuh waktu lama untuk memperbanyak library2 Yii di Composer. Sekian lama dealing dengan Yii 1.x library2 Yii jarang sekali menggunakan library2 yang freely availabe di internet. Sifat library2 di Yii 1.x itu bentuknya extension dimana library2 tersebut di encapsulate ke Yii style."</em>
-<b>
-</b>Taufan Aditya juga menyayangkan hal ini, <em>"Kalau yang sekarang tiap FW punya repo sendiri utk masing-masing plugin (Spark, Gii, Bundle, Zend Module, etc). Semuanya memaksakan idiom/style masing-masing. Yang jadi korban: developer. Kedepan, kalau developer PHP bikin satu library, yang support composer, ini artinya library tsb bisa digunakan dengan Framework apapun yang support composer. Bahkan tanpa Framework."</em>
-<b>
-</b>Dan memang benar, sekarang ini Framework2 PHP seakan membentuk komunitas sendiri untuk memperbanyak Repository Library-nya yang sayangnya library tersebut tidak dapat digunakan di framework yang berbeda. Beberapa diantaranya adalah:
-<ol>
-    <li>CodeIgniter - Spark (<a href="http://www.facebook.com/l.php?u=http%3A%2F%2Fgetsparks.org%2F&amp;h=6AQFr7BjD&amp;s=1" target="_blank" rel="nofollow">http://getsparks.org/</a>)</li>
-    <li>Laravel - Bundles (<a href="http://www.facebook.com/l.php?u=http%3A%2F%2Fbundles.laravel.com%2F&amp;h=NAQGfpVbm&amp;s=1" target="_blank" rel="nofollow">http://bundles.laravel.com/</a>)</li>
-    <li>Yii - Extensions (<a href="http://www.facebook.com/l.php?u=http%3A%2F%2Fwww.yiiframework.com%2Fextensions%2F&amp;h=cAQHMwwxA&amp;s=1" target="_blank" rel="nofollow">http://www.yiiframework.com/extensions/</a>)</li>
-    <li>Kohana - Modules (<a href="http://www.facebook.com/l.php?u=http%3A%2F%2Fkohana-modules.com%2F&amp;h=EAQFbgSNq&amp;s=1" target="_blank" rel="nofollow">http://kohana-modules.com/</a>)</li>
-    <li>Zend Framework- Zend Modules (<a href="http://www.facebook.com/l.php?u=http%3A%2F%2Fmodules.zendframework.com%2F&amp;h=NAQGfpVbm&amp;s=1" target="_blank" rel="nofollow">http://modules.zendframework.com/</a>)</li>
-</ol>
-Bandingkan dengan framework di dunia lain, mereka hanya punya satu repository yang di-support seluruh developer yang pakai language tersebut. Dan seluruh library di repo tersebut dapat dipakai di semua framework di languange tersebut.
-<ol>
-    <li>Java - Maven (<a href="http://www.facebook.com/l.php?u=http%3A%2F%2Fmvnrepository.com%2F&amp;h=8AQHmk52U&amp;s=1" target="_blank" rel="nofollow">http://mvnrepository.com/</a>)</li>
-    <li>Ruby - Gems (<a href="http://www.facebook.com/l.php?u=http%3A%2F%2Frubygems.org%2F&amp;h=BAQHwP4m0&amp;s=1" target="_blank" rel="nofollow">http://rubygems.org/</a>)</li>
-    <li>NodeJs - NPM (<a href="http://www.facebook.com/l.php?u=https%3A%2F%2Fnpmjs.org%2F&amp;h=vAQE5JD05&amp;s=1" target="_blank" rel="nofollow">https://npmjs.org/</a>)</li>
-</ol>
-<b>
-</b>PHP sendiri sudah memulai upaya ini dengan membuat repository yang berisi libray standard yang dapat dipakai semua framework asalkan framework tersebut support Composer. Repository tersebut bernama Packagist (<a href="http://www.facebook.com/l.php?u=https%3A%2F%2Fpackagist.org%2F&amp;h=AAQH5GtcH&amp;s=1" target="_blank" rel="nofollow">https://packagist.org/</a>). Untuk menggunakan library-library yang terdapat di Packagist itulah digunakan Composer.</p>
-
-<p>Diskusi mengerucut lagi menjadi kesimpulan utama, yaitu jika memilih framework PHP, apapun itu, pastikan framework tersebut support Composer. Hal ini membuat pekerjaan kita menjadi fleksibel, atau bahkan tanpa framework sekalipun, hanya menggunakan Composer, pekerjaan kita jauh lebih mudah tanpa harus selalu "reinvent the wheel".</p>
-
-<p>Enjoy the revolution of PHP :)</p>
-
-		  		</div>
-	</div>
-		<div class="post">
-		<h2 class="title"><a href="/2013/10/08/memanfaatkan-vbox-secara-out-of-the-box-dengan-vagrant.html">Memanfaatkan Vbox Secara Out of the Box dengan Vagrant</a></h2>
-		<p class="meta">Posted by <a href="#">Glend Maatita</a> on October 08, 2013
-			&nbsp;&bull;&nbsp; <a href="/2013/10/08/memanfaatkan-vbox-secara-out-of-the-box-dengan-vagrant.html" class="permalink">Full article</a></p>
-		<div class="entry">
-					  	<p><img src="/images/vagrant.png" alt="Alt text" /></p>
-
-<p><a href="http://www.vagrantup.com/">Vagrant</a> adalah sebuah tools yang dapat digunakan untuk membuat environment kerja yang portable dan distributable. Environment kerja yang dimaksud adalah OS beserta seluruh library dan software yang diperlukan agar seorang programmer dapat langsung melakukan tugasnya (baca: coding) tanpa harus repot men-setting environment kerja. Intinya, dengan Vagrantm anda akan dapat melakukan skenario seperti ini</p>
-
-<p><em>Anda punya project yang akan dideploy ke server milik client anda yang sudah terinstall CentOS didalamnya. Anda ingin agar saat aplikasi telah di-deploy, tidak ada masalah yang berarti karena perbedaan environment. Server pakai CentOS dengan berbagai library yang spesifik, sedangkan tim developer anda memakai OS yang berbeda2. ada yang pake Windows, Mac, atau Ubuntu.</em></p>
-
-<p><em>Hal ini akan mengakibatkan beberapa macam permasalahan. Misal, programmer A, si maniak Linux Slackware, telah menyelesaikan suatu <strong>fitur X</strong>, mengetest nya dan ternyata running well, kemudian me-push kode nya ke Git Repo. Kemudian programmer B, pengguna Windows, dengan polosnya melakukan pull ke Git Repo untuk mendapatkan update kode fitur terbaru dan ternyata fitur baru tersebut tidak berjalan. Setelah diselidiki, ternyata si programmer A telah menginstall beberapa library spesifik Slackware agar <strong>fitur X</strong> dapat berjalan</em>.</p>
-
-		  		</div>
-	</div>
-		<div class="post">
-		<h2 class="title"><a href="/2013/10/05/setting-environment-untuk-ruby-development-part-1.html">Setting Environment untuk Ruby Development Part 1</a></h2>
-		<p class="meta">Posted by <a href="#">Glend Maatita</a> on October 05, 2013
-			&nbsp;&bull;&nbsp; <a href="/2013/10/05/setting-environment-untuk-ruby-development-part-1.html" class="permalink">Full article</a></p>
-		<div class="entry">
-					  	<p>Setting environment untuk memulai development di Ruby memang susah-susah gampang. Tidak seperti di PHP, kita tinggal install XAMPP dan langsung siap untuk coding. Setting Ruby enviroment agak sedikit tricky dan memerlukan beberapa step yang kadang membingungkan. Untuk itu, kita akan bahas tuntas bagaimana cara settting environment yang komplit sehingga kita bisa memulai coding dengan nyaman. Yuk, langsung saja..</p>
-
-<p>Sebelumnya, <strong>FYI</strong>, Windows bukanlah OS yang ideal untuk development Ruby. Ruby tidak jalan secara native di Windows, dan akan membutuhkan semacam virtual runtime agar bisa jalan di Windows sehingga akan membuatnya lemot parah. OS yang cocok adalah yang <strong>Unix-based</strong> semisal Linux atau Mac OS. Dan tulisan ini hanya akan membahas bagaimana setup environment Ruby di Linux. Jika kamu masih tidak bisa lepas dari Windows, kamu bisa coba <a href="http://rubyinstaller.org/]">Ruby Installer</a>, semacam XAMPP untuk Ruby :) . Oke, langsung saja..</p>
-
-		  		</div>
-	</div>
 				<div class="pagination-right">
 		<a href="/index1.html">Berikutnya >></a>
 	</div>
@@ -267,13 +217,15 @@ Bandingkan dengan framework di dunia lain, mereka hanya punya satu repository ya
 		<li>
 			<h2>Kategori</h2>
 			<ul>
-					      	<li><a href="/categories/ruby.html">Ruby</a></li>
+					      	<li><a href="/categories/php.html">Php</a></li>
+	      	      	<li><a href="/categories/framework.html">Framework</a></li>
+	      	      	<li><a href="/categories/silex.html">Silex</a></li>
+	      	      	<li><a href="/categories/ruby.html">Ruby</a></li>
 	      	      	<li><a href="/categories/notes.html">Notes</a></li>
 	      	      	<li><a href="/categories/review.html">Review</a></li>
 	      	      	<li><a href="/categories/git.html">Git</a></li>
 	      	      	<li><a href="/categories/emacs.html">Emacs</a></li>
 	      	      	<li><a href="/categories/linux.html">Linux</a></li>
-	      	      	<li><a href="/categories/php.html">Php</a></li>
 	      	      	<li><a href="/categories/programming.html">Programming</a></li>
 	      			</ul>
 		</li>							
