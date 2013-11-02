@@ -14,6 +14,9 @@ categories: Review, Cloud, Python
 ---
 ![Alt text](/images/openshift.png)
 
+Nb: Versi asli (English Version) tulisan ini dapat anda baca di link dibawah ini:
+[http://pythonthusiast.pythonblogs.com](http://pythonthusiast.pythonblogs.com/230_pythonthusiast/archive/1304_introducing_openshift__heroku_replacement_for_your_next_killer_python_web_application.html)
+
 Jika kamu sudah cukup berpengalaman dengan pengembangan aplikasi web dengan PHP, saya yakin, menemukan layanan hosting yang murah sangatlah mudah. Ini memang adalah salah satu poin positif jika kamu mengembangkan websitemu dengan menggunakan PHP. Ini disebabkan PHP, atau lebih spesifik-nya stack development **LAMP** (Linux, Apache, MySQL, & PHP) adalah stack development yang paling populer untuk mengembangkan aplikasi web. Hosting untuk PHP sangat beragam dengan variasi harga yang bermacam-macam pula. Kamu bisa menemukan banyak layanan hosting yang gratis, harga kisaran 100rb rupiah, hingga jutaan. 
 
 [more]

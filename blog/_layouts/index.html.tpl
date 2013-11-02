@@ -9,21 +9,22 @@
 			&nbsp;&bull;&nbsp; <a href="{{ post.url }}" class="permalink">Full article</a></p>
 		<div class="entry">
 			{% if post.excerpt is null %}
-		  	{{ post.body | raw }}
+		  	{{ post.body | raw }} 		  	
 		  {% else %}
 		  	{{ post.excerpt| raw }}
+		  	<p><a href="{{ post.url }}">Selengkapnya..</a></p>
 		  {% endif %}
 		</div>
 	</div>
 	{% endfor %}
 	{% if pagination.previousPage is not null %}
 	<div class="pagination-left">
-		<a href="{{ pagination.previousPage.url }}"><< Sebelumnya</a>
+		<a href="{{ pagination.previousPage.url }}"><< Page Berikutnya</a>
 	</div>
 	{% endif %}
 	{% if pagination.nextPage is not null %}
 	<div class="pagination-right">
-		<a href="{{ pagination.nextPage.url }}">Berikutnya >></a>
+		<a href="{{ pagination.nextPage.url }}">Page Sebelumnya >></a>
 	</div>
 	{% endif %}
 {% endblock %}
