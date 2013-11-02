@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : ExtremeSurfing
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20120225
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Membangun Aplikasi Python dengan Menggunakan Flask di OpenShift Part 2: Fitur Aplikasi dan Stack Teknologi - Let&#039;s Talk About Code</title>
+<link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+  <div id="page">
+    <div id="page-bgtop">
+      <div id="page-bgbtm">
+        <div id="page-content">
+          <div id="header-wrapper">
+            <div id="header">
+              <div id="logo">
+                <h1><a href="#">KodeTalk</a></h1>
+                <p>Let&#039;s Talk About Code</p>
+              </div>
+            </div>
+          </div>
+          <!-- end #header -->
+          <div id="menu-wrapper">
+  <div id="menu">
+    <ul>
+              <li><a href="/index.html">Homepage</a></li>
+              <li><a href="/tolkien.html">Tolkien</a></li>
+          </ul>
+  </div>
+</div>
+<!-- end #menu -->
+<div id="banner"><img src="/images/banner.jpg" width="940" height="300" alt="" /></div>
+          <div id="content">
+            <div class="post">
+	<h2 class="title"><a href="#">Membangun Aplikasi Python dengan Menggunakan Flask di OpenShift Part 2: Fitur Aplikasi dan Stack Teknologi</a></h2>
+	<p class="meta">Posted by 
+		<a href="#">Eko Wibowo</a> on November 02, 2013 &nbsp;&bull;&nbsp;
+				  <a href="/categories/programming.html" class="permalink">Programming</a> 
+	  		  <a href="/categories/cloud.html" class="permalink">Cloud</a> 
+	  		  <a href="/categories/python.html" class="permalink">Python</a> 
+	  	</p>
+	<div class="entry">
+		<p><img src="/images/online-cv.jpg" alt="Alt text" /></p>
+
+<p>Jika kamu mengikuti part 1 dari seri tutorial ini, maka saya bisa menganggap anda sudah melakukan step-step mandatory sebelumnya seperti mendaftar di Openshift dan telah sukses menginstall RHC Client Tools. Di part ini, saya akan menjabarkan detail aplikasi seperti apa yang akan kita coba bangun beserta stack teknologi yang digunakan dibelakangnya.</p>
+
+<p>Aplikasi yang akan kita buat nanti bukan sekedar aplikasi untuk menampilkan tulisan <em>Hello World!</em>, sebuah aplikasi yang umum digunakan sebagai awal pengenalan. Tapi kita akan coba buat aplikasi yang sedikit kompleks, minimal cukup sebagai proof of concept dari teknologi yang akan kita gunakan. Terkadang, ketika kita melamar suatu pekerjaan, employer akan bilang,</p>
+
+<blockquote>
+  <p><em>'Oke, saya punya kerjaan Python untuk anda, tapi apa anda mempunyai kualifikasi yang kami cari? Ada portofolio yang bisa anda tunjukkan?'</em>.</p>
+</blockquote>
+
+<p>Kejadian selanjutnya sepertinya sudah bisa diprediksi. Umumnya kita akan mengirim CV kita dalam bentuk PDF atau DOC dengan beberapa link yang merujuk ke portofolio kita (bila kita punya portofolio online). Atau mungkin kita hanya cukup untuk mengirim <a href="http://id.linkedin.com/pub/eko-wibowo/30/32b/503/">public linkedin</a> kita atau page <a href="http://about.me/ekowibowo">about.me</a> kita. Tapi.. hey, kenapa kita tidak memberi mereka pengalaman istimewa, yaitu dengan mengajak mereka untuk mengeksplore CV online interaktif kita, yang dibangun dengan stack teknologi Python di belakangnya dan di-host ke Openshift? Saya yakin itu akan menjadi pengalaman yang istimewa bagi calon employer anda hehe :D</p>
+
+<p>Sekarang, mari kita bikin list untuk aplikasi kita yang keren ini. Dari konsep aplikasi yang sudah kita tentukan sebelumnya, yaitu aplikasi untuk CV, online dan interaktif, maka fitur-fitur yang ada nantinya, kira-kira sebagai berikut:</p>
+
+<ul>
+<li><p>Walaupun awalnya saya ingin aplikasi untuk menampilkan CV personal saya pribadi, tapi saya juga ingin agar orang lain juga bisa <strong>Signup</strong> untuk membuat CV online mereka sendiri, dan punya URL unik untuk menampilkan CV online mereka tersebut. Jadi kira-kira aplikasi ini akan mirip dengan <a href="http://about.me/">About.me</a> yang mana kita dapat memperoleh URL yang unik untuk page kita yaitu di <strong><em>about.me/[YOUR NAME]</em></strong>. Aplikasi ini akan mempunyai behaviour yang kira-kira sama.</p></li>
+<li><p>User dapat mengisi data dirinya ke personal page mereka, terutama data-data tentang profesionalitas dirinya, seperti <em>status pekerjaan sekarang, penguasaan teknologi, pendidikan, aktivitas Github, portofolio, dll</em>. Untuk fitur ini, aplikasi ini akan mirip dengan Linkedin.</p></li>
+<li><p>Visitor aplikasi kita, yaitu mungkin termasuk calon employer, akan bisa me-filter data berdasarkan misalnya Penguasaan Teknologi. Ini akan memudahkan mereka menemukan kandidat employee yang mereka cari-cari selama ini</p></li>
+<li><p>Desain akan dibuat semenarik dan se-interaktif mungkin. Misalnya, setiap page personal user akan mempunyai tag-tag tentang Penguasaan Teknologi (Technologu Mastered) misalnya, dan ketika link tag tersebut diklik, data user akan difilter dengan menggunakan <em>Ajax request</em> tanpa perlu me-load ulang halaman tersebut. Konsep yang umum digunakan di era <a href="http://en.wikipedia.org/wiki/Web_2.0">Web 2.0</a> saat ini</p></li>
+<li><p>User dapat melakukan Signup dan Signin dengan menggunakan Social Media semisal Facebook, Twitter, atau Gmail</p></li>
+<li><p>Page personal user dapat didownload dalam bentuk PDF</p></li>
+</ul>
+
+<p>Great, Kita sudah mempunyai daftar fitur yang akan kita realisasikan di aplikasi kita nanti. Sedangkan, stack teknologi yang akan kita gunakan adalah sebagai berikut</p>
+
+<p><strong>1. Openshift</strong></p>
+
+<p>Sebagai cloud server &amp; platform tempat aplikasi kita di-host. Kenapa Openshift? tentunya anda tahu kenapa kita pilih Openshift, sudah saya tuangkan uneg-uneg saya <a href="http://kodetalk.com/2013/10/31/pengenalan-openshift-pengganti-heroku-untuk-aplikasi-web-python-anda.html">disini</a>.</p>
+
+<p><strong>2. Python (v2.7)</strong></p>
+
+<p>Python versi 3 memang sudah dirilis, tapi sampai sekarang, saya masih ingin mengeskplore lebih dalam versi 2.x ini. Terutama lebih disebabkan karena saya ingin mengeksplore <a href="http://twistedmatrix.com/trac/wiki">Twisted Framework</a> yang sampai sekarang masih menggunakan Python v2.x. Saya rasa, migrasi ke versi 3 tidak terlalu susah dan bleeding</p>
+
+<p><strong>3. Python Flask</strong></p>
+
+<p><img src="/images/flask.png" alt="Alt text" /></p>
+
+<p><a href="http://flask.pocoo.org/">Flask</a> adalah micro-framework untuk membuat web application di Python. Sangat simple dan sederhana tapi fun to use. Kita bisa membuat aplikasi web sederhana yang hanya terdiri dari satu file, sudah termasuk view, model, etc. Meskipun pada saat pertama kali Flask dibuat sang creator ingin agar framework ini menjadi framework yang kecil, sederhana, dan padat, seiring dengan berjalannya waktu, para kontributor berhasil membuat banyak sekali set extension lengkap untuk Flask, sehingga Flask dapat benar-benar dimanfaatkan untuk membuat aplikasi web yang mutakhir dan lengkap. Akan tetapi, kita tetap dapat menggunakan Flask seminimalis mungkin. Jika kita ingin meng-extend fitur basic Flask, kita dapat langsung menggunakan beragam extension mulai dari ORM, Form Handling, OpenID, dan masih banyak lagi lainnya. Sebuah pendekatan yang menurut saya sedikit berbeda dengan apa yang dilakukan oleh <a href="https://www.djangoproject.com/">Django</a> dimana ia merupakan full-stack framework yang sudah memiliki beragam fitur yang melekat padanya. Dengan Flask, kamu dapat memilih dengan fleksibel stack technology apa yang ingin diintegrasikan ke dalam aplikasimu</p>
+
+<p><strong>4. SQL Alchemy</strong></p>
+
+<p>Saat ini, <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> mungkin adalah ORM de-facto untuk aplikasi di Python. SQLAlchemy juga mempunyai extension untuk Flask, sehingga dapat diintegrasikan dengan mudah ke dalam aplikasi berbasis Flask. Jika kamu tidak menyukai ORM Style dan masih ingin menggunakan plain SQL, well.. you're not alone. Awalnya, saya tidak berpikir bahwa dengan mempelajari ORM, akan memberikan manfaat positif bagi karier saya sebagai software engineer. Tapi semua itu berubah, SQLAlchemy benar-benar bermanfaat bagi saya. Dimulai dari SQL Schema definition, database creation/migration dan database query, semuanya begitu intuitif dan sangat mudah untuk digunakan. Jadi, kamu harus coba ini :)</p>
+
+<p><strong>5. Bootstrap</strong></p>
+
+<p>Saya pribadi bukanlah web designer yang handal. Saya tidak expert di bidang layouting, design, atau bahkan CSS. Jika saya diminta untuk untuk mendesign web from scratch, mungkin kepala saya sendiri yang akan saya scratch hehe.. Tapi semua berubah ketika <a href="http://getbootstrap.com/%E2%80%8E">Bootstrap</a> datang. Bootstrap adalah CSS framework, open sourced, yang memungkinkan kita-kita, yang tidak jago dalam hal design ini, membuat design Web 2.0 yang bagus dengan menggunakan <a href="http://bootsnipp.com/">Web UI element</a> yang sudah disediakan oleh Bootstrap seperti fluid layout, navbar, search box, form element, header &amp; footer, dsb.</p>
+
+<p><strong>6. PostgreSQL</strong></p>
+
+<p>Aplikasi kita nanti akan menggunakan PostgreSQL untuk database relationalnya. Sebenarnya, ketika kita sudah menggunakan SQLAlchemy untuk ORM, perbedaan database tidak akan berpengaruh signifikan di sisi coding. Kita bisa pakai database relational yang lebih ringan semisal SQLite atau MySQL. Beda kasus jika kita menggunakan database model NoSQL seperti Mongo atau Redis</p>
+
+<p>Yap, perlengkapan sudah kita list, saatnya untuk coding, dimulai dari part berikutnya.</p>
+
+<p>Stay tune ya !</p>
+
+<p>Tulisan versi asli (English) dapat dibaca di <a href="http://pythonthusiast.pythonblogs.com/230_pythonthusiast/archive/1307_building_python_flask_application_in_openshiftheroku_replacement_part_ii__application_features_and_its_stack_of_technology_about_to_use.html">http://pythonthusiast.pythonblogs.com/</a></p>
+ 
+	</div>
+</div>
+            <div style="clear: both;">&nbsp;</div>
+          </div>
+          <!-- end #content -->
+          <div id="sidebar">
+	<ul>
+		<li>
+			<h2>Situs apa sih ini?</h2>
+			<p>KodeTalk adalah sebuah kumpulan tulisan seputar web development dan programming. Let's talk about code here.</p>
+		</li>
+		<li>
+			<h2>Kategori</h2>
+			<ul>
+					      	<li><a href="/categories/programming.html">Programming</a></li>
+	      	      	<li><a href="/categories/cloud.html">Cloud</a></li>
+	      	      	<li><a href="/categories/python.html">Python</a></li>
+	      	      	<li><a href="/categories/review.html">Review</a></li>
+	      	      	<li><a href="/categories/php.html">Php</a></li>
+	      	      	<li><a href="/categories/framework.html">Framework</a></li>
+	      	      	<li><a href="/categories/silex.html">Silex</a></li>
+	      	      	<li><a href="/categories/ruby.html">Ruby</a></li>
+	      	      	<li><a href="/categories/notes.html">Notes</a></li>
+	      	      	<li><a href="/categories/git.html">Git</a></li>
+	      	      	<li><a href="/categories/emacs.html">Emacs</a></li>
+	      	      	<li><a href="/categories/linux.html">Linux</a></li>
+	      			</ul>
+		</li>							
+	</ul>
+</div>
+<!-- end #sidebar -->        </div>
+        <div style="clear: both;">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+  <!-- end #page -->
+</div>
+<div id="footer">
+	<p>Copyright (c) 2012 KodeTalk.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/"> CSS Templates</a>.</p>
+</div><!-- end #footer -->
+</body>
+</html>

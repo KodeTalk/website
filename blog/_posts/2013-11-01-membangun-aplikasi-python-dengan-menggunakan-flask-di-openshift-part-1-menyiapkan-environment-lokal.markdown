@@ -10,7 +10,7 @@ author:
   twitter: Your Twitter
   github: Your Github
   signature: Your Signature
-categories: Review, Cloud, Python
+categories: Programming, Cloud, Python
 ---
 ![Alt text](/images/connect-openshift.png)
 
@@ -20,7 +20,7 @@ Setelah register, langkah berikutnya adalah [menginstall **Openshift RHC Client 
 
 [more]
 
-Saat ini saya bekerja di lingkungan OSX yang menjalankan Virtual Box yang berisi Ubuntu dan Windows 7. Ketiga OS tersebut mempunyai RHC Client masing-masing, dan menurut pendapat saya, bekerja dengan Openshift di Ubuntu (Linux) terasa paling natural dan paling mudah dibanding 2 OS lainnya. Tapi tentu saja, saya tidak akan memaksa kamu untuk menggunakan Linux, gunakan saja OS pilihanmu yang menurutmu paling nyaman digunakan. Dibawah ini saya akan menjelaskan bagaimana menyiapkan lingkungan kerja Openshift di Linux (Ubuntu) dan juga di Windows
+Saat ini saya bekerja di lingkungan OSX yang menjalankan Virtual Box yang berisi Ubuntu dan Windows 7. Ketiga OS tersebut mempunyai RHC Client masing-masing, dan menurut pendapat saya, bekerja dengan Openshift di Ubuntu (Linux) terasa paling natural dan paling mudah dibanding 2 OS lainnya. Tapi tentu saja, saya tidak akan memaksa anda untuk menggunakan Linux, gunakan saja OS pilihanmu yang menurutmu paling nyaman digunakan. Dibawah ini saya akan menjelaskan bagaimana menyiapkan lingkungan kerja Openshift di Linux (Ubuntu) dan juga di Windows
 
 Untuk memulai bekerja dengan Openshift, paling tidak kita akan membutuhkan 3 tools ini yaitu
 
@@ -28,7 +28,7 @@ Untuk memulai bekerja dengan Openshift, paling tidak kita akan membutuhkan 3 too
 + [Git](http://git-scm.com/)
 + OpenShift RHC Client Tools
 
-Jika kamu menggunakan Ubuntu, untuk menginstall 3 tools diatas hanya membutuhkan perintah
+Jika anda menggunakan Ubuntu, untuk menginstall 3 tools diatas hanya membutuhkan perintah
     
     ~$ sudo apt-get install ruby-full rubygems git-core 
     ~$ sudo gem install rhc  
@@ -36,13 +36,13 @@ Jika kamu menggunakan Ubuntu, untuk menginstall 3 tools diatas hanya membutuhkan
     
 Selesai :)
 
-Sedangkan, jika kamu menggunakan Windows, langkah-langkahnya adalah
+Sedangkan, jika anda menggunakan Windows, langkah-langkahnya adalah
 
-+ Download dan Install [Ruby Installer](http://rubyinstaller.org/). Cara tercepat untuk menginstall Ruby di Windows dan semua dependency-nya adalah dengan Ruby Installer. Saat proses instalasi, pastikan kamu memilih option *"Add Ruby executables to your PATH"* sehingga kamu dapat menggunakan Ruby Command di directory manapun melalui command prompt
++ Download dan Install [Ruby Installer](http://rubyinstaller.org/). Cara tercepat untuk menginstall Ruby di Windows dan semua dependency-nya adalah dengan Ruby Installer. Saat proses instalasi, pastikan anda memilih option *"Add Ruby executables to your PATH"* sehingga anda dapat menggunakan Ruby Command di directory manapun melalui command prompt
 
-+ Download dan install [Git for Windows](https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git). Git adalah salah elemen dasar jika kamu bekerja dengan Openshift. Selain sebagai *version control*, Git juga digunakan untuk mendeploy aplikasimu ke Openshift. Sekali kamu melakukan Git Push ke server Openshift, secara otomatis Openshift akan otomatis me-restart servermu dan menjalankan kode aplikasimu yang terbaru
++ Download dan install [Git for Windows](https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git). Git adalah salah elemen dasar jika anda bekerja dengan Openshift. Selain sebagai *version control*, Git juga digunakan untuk mendeploy aplikasimu ke Openshift. Sekali anda melakukan Git Push ke server Openshift, secara otomatis Openshift akan otomatis me-restart servermu dan menjalankan kode aplikasimu yang terbaru
  
-+ Buka command prompt, saya sangat merekomendasikan kamu menggunakan **Git Bash**, yang sudah disertakan ketika kita menginstall *Git for Windows*. Git bash adalah *bash shell*, jadi kamu akan punya tools command line yang hampir menyerupai command line di OS *Nix-based. Ketik perintah berikut untuk menginstall RHC Client tools untuk Windows
++ Buka command prompt, saya sangat merekomendasikan anda menggunakan **Git Bash**, yang sudah disertakan ketika kita menginstall *Git for Windows*. Git bash adalah *bash shell*, jadi anda akan punya tools command line yang hampir menyerupai command line di OS *Nix-based. Ketik perintah berikut untuk menginstall RHC Client tools untuk Windows
 
     
     ***gem install***
@@ -52,7 +52,7 @@ Sedangkan, jika kamu menggunakan Windows, langkah-langkahnya adalah
 
     ***rhc setup***
     
-Jika ini adalah pertama kali kamu bekerja dengan menggunakan Git, berarti kemungkinan besar kamu belum mempunyai **shh-key**. Untuk membuatnya ketikkan perintah dibawah ini (berlaku untuk Linux ataupun Windows)
+Jika ini adalah pertama kali anda bekerja dengan menggunakan Git, berarti kemungkinan besar anda belum mempunyai **shh-key**. Untuk membuatnya ketikkan perintah dibawah ini (berlaku untuk Linux ataupun Windows)
 
     ~$ ssh-keygen
 
@@ -67,7 +67,7 @@ Tunggu sebentar sementara Openshift sedang menyiapkan server environment untuk a
 
 ![Alt text](/images/setup-server-openshift.png)
 
-Sekarang, silakan akses aplikasi openshift anda di URL ***http://bio-<YOUR DOMAIN NAME>.rhcloud.com***. Nantinya kita juga bisa meng-customize URL ini menjadi URL dengan nama domain anda sendiri. Selain men-setup server untuk aplikasi kita, perintah *rhc app-create* diatas juga meng-clone kode repository ke current directory dimana kita menjalankan perintah tersebut, dalam hal ini folder bernama **bio**.
+Sekarang, silakan akses aplikasi openshift anda di URL ***http://bio-[YOUR DOMAIN NAME].rhcloud.com***. Nantinya kita juga bisa meng-customize URL ini menjadi URL dengan nama domain anda sendiri. Selain men-setup server untuk aplikasi kita, perintah *rhc app-create* diatas juga meng-clone kode repository ke current directory dimana kita menjalankan perintah tersebut, dalam hal ini folder bernama **bio**.
 
 Part berikutnya akan membahas lebih lanjut aplikasi seperti apa yang akan kita buat nanti untuk belajar, serta teknologi apa saja yang akan kita gunakan.
 
