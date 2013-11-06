@@ -6,7 +6,7 @@
 		}
 	],
 	"require": {
-		"tolkien/tolkien": "dev-elfbranch",
+		"tolkien/tolkien": "dev-master",
 		"heston/heston": "dev-master"
 	}
 }
