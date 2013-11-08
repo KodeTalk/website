@@ -3,13 +3,7 @@ type: post
 layout: post
 title: Pengenalan Silex Part 2 - Restful Routing
 date: 2013-10-25
-author:
-  name: Glend Maatita
-  email: glend@kodetalk.com
-  facebook: Your Facebook
-  twitter: Your Twitter
-  github: Your Github
-  signature: Your Signature
+author: glend
 categories: PHP, Framework, Silex
 ---
 Di part ini kita akan membuat contoh aplikasi Restfull sederhana dengan menggunakan Silex Framework. Disamping itu, kita juga akan mengintegrasikan Silex dengan beberapa komponen Symfony lainnya seperti [Twig Template Engine](http://twig.sensiolabs.org/) dan [Doctrine DBAL](http://www.doctrine-project.org/projects/dbal.html). Here we go..

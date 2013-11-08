@@ -7,8 +7,8 @@
 		<li>
 			<h2>Kategori</h2>
 			<ul>
-				{% for siteCategory in site.siteCategories %}
-	      	<li><a href="{{ siteCategory.url }}">{{ siteCategory.name | capitalize }}</a></li>
+				{% for category in site.categories %}
+	      	<li><a href="{{ category.url }}">{{ category.name | capitalize }}</a></li>
 	      {% endfor %}
 			</ul>
 		</li>							

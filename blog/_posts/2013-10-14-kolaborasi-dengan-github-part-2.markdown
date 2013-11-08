@@ -3,13 +3,7 @@ type: post
 layout: post
 title: Kolaborasi dengan Github Part 2
 date: 2013-10-14
-author:
-  name: Glend Maatita
-  email: glend@kodetalk.com
-  facebook: Your Facebook
-  twitter: Your Twitter
-  github: Your Github
-  signature: Your Signature
+author: glend
 categories: Git
 ---
 **5. Clone repository**

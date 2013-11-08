@@ -3,13 +3,7 @@ type: post
 layout: post
 title: Setting Environment untuk Ruby Development Part 1
 date: 2013-10-05
-author:
-  name: Glend Maatita
-  email: glend@kodetalk.com
-  facebook: Your Facebook
-  twitter: Your Twitter
-  github: glendmaatita
-  signature: Your Signature
+author: glend
 categories: Programming, Ruby
 ---
 

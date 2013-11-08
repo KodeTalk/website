@@ -3,13 +3,7 @@ type: post
 layout: post
 title: Tutorial Emacs untuk Pendatang Baru
 date: 2013-10-13
-author:
-  name: Eko Wibowo
-  email: swdev.bali@gmail.com
-  facebook: Your Facebook
-  twitter: Your Twitter
-  github: Your Github
-  signature: "One must fully understand the system and all of its intricacies in order to build a computer program"
+author: eko
 categories: Emacs, Linux
 ---
 <style>

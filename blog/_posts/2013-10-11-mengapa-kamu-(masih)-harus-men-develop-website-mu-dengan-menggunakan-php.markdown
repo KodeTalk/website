@@ -3,13 +3,7 @@ type: post
 layout: post
 title: Mengapa kamu (masih) harus men-develop website-mu dengan menggunakan PHP
 date: 2013-10-11
-author:
-  name: Glend Maatita
-  email: glend@kodetalk.com
-  facebook: Your Facebook
-  twitter: Your Twitter
-  github: Your Github
-  signature: Your Signature
+author: glend
 categories: Notes, PHP
 ---
 

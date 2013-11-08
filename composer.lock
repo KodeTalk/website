@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "a4455e4dc23060fe8f903eed21c9c51c",
+    "hash": "9529b8ea10b4ad6dc28292b52a8c5fd8",
     "packages": [
         {
             "name": "heston/heston",
@@ -463,6 +463,59 @@
             "time": "2013-01-13 10:24:48"
         },
         {
+            "name": "symfony/console",
+            "version": "v2.3.6",
+            "target-dir": "Symfony/Component/Console",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Console.git",
+                "reference": "f880062d56edefb25b36f2defa65aafe65959dc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/f880062d56edefb25b36f2defa65aafe65959dc7",
+                "reference": "f880062d56edefb25b36f2defa65aafe65959dc7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/event-dispatcher": "~2.1"
+            },
+            "suggest": {
+                "symfony/event-dispatcher": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Console\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-09-25 06:04:15"
+        },
+        {
             "name": "symfony/yaml",
             "version": "v2.3.6",
             "target-dir": "Symfony/Component/Yaml",
@@ -511,21 +564,22 @@
         },
         {
             "name": "tolkien/tolkien",
-            "version": "dev-elfbranch",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/glendmaatita/Tolkien.git",
-                "reference": "53443d8f3ee4a843226e4e74318002872aca540b"
+                "reference": "f0e888d2bd3efd8c74159a745a0f629b8c624a9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/glendmaatita/Tolkien/zipball/53443d8f3ee4a843226e4e74318002872aca540b",
-                "reference": "53443d8f3ee4a843226e4e74318002872aca540b",
+                "url": "https://api.github.com/repos/glendmaatita/Tolkien/zipball/f0e888d2bd3efd8c74159a745a0f629b8c624a9d",
+                "reference": "f0e888d2bd3efd8c74159a745a0f629b8c624a9d",
                 "shasum": ""
             },
             "require": {
                 "michelf/php-markdown": "1.3.*",
                 "phpunit/phpunit": "3.7.*",
+                "symfony/console": "2.3.*",
                 "symfony/yaml": "2.3.*",
                 "twig/twig": "1.*"
             },
@@ -535,7 +589,10 @@
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "Tolkien": "src"
+                    "Tolkien": [
+                        "src",
+                        "test"
+                    ]
                 }
             },
             "license": [
@@ -549,23 +606,23 @@
             ],
             "description": "Simple Blogging Engine inspired by Jekyll",
             "support": {
-                "source": "https://github.com/glendmaatita/Tolkien/tree/elfbranch",
+                "source": "https://github.com/glendmaatita/Tolkien/tree/master",
                 "issues": "https://github.com/glendmaatita/Tolkien/issues"
             },
-            "time": "2013-10-22 17:49:23"
+            "time": "2013-11-07 09:36:41"
         },
         {
             "name": "twig/twig",
-            "version": "v1.14.1",
+            "version": "v1.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "8873d7593ad7c120004f177c0fd01459b383c9cb"
+                "reference": "ca445842fcea4f844d68203ffa2d00f5e3cdea64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/8873d7593ad7c120004f177c0fd01459b383c9cb",
-                "reference": "8873d7593ad7c120004f177c0fd01459b383c9cb",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/ca445842fcea4f844d68203ffa2d00f5e3cdea64",
+                "reference": "ca445842fcea4f844d68203ffa2d00f5e3cdea64",
                 "shasum": ""
             },
             "require": {
@@ -601,7 +658,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-10-15 19:17:38"
+            "time": "2013-10-30 08:20:53"
         }
     ],
     "packages-dev": [

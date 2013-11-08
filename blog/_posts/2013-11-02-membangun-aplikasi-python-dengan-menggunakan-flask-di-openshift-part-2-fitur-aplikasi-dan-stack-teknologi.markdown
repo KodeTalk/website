@@ -3,13 +3,7 @@ type: post
 layout: post
 title: Membangun Aplikasi Python dengan Menggunakan Flask di OpenShift Part 2: Fitur Aplikasi dan Stack Teknologi
 date: 2013-11-02
-author:
-  name: Eko Wibowo
-  email: eko@kodetalk.com
-  facebook: Your Facebook
-  twitter: Your Twitter
-  github: Your Github
-  signature: Your Signature
+author: eko
 categories: Programming, Cloud, Python
 ---
 

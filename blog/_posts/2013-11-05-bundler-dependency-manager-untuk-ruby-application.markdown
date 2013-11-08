@@ -3,13 +3,7 @@ type: post
 layout: post
 title: Bundler - Dependency Manager untuk Ruby Application
 date: 2013-11-05
-author:
-  name: Glend Maatita
-  email: glend@kodetalk.com
-  facebook: Your Facebook
-  twitter: Your Twitter
-  github: Your Github
-  signature: Your Signature
+author: glend
 categories: Ruby, Notes
 ---
 Para Rubyst atau Rails developer pasti sudah tidak asing dengan yang namanya [Bundler](http://bundler.io/) ini, karena Bundler secara de-facto telah menjadi dependency manager untuk aplikasi Ruby atau project Rails. Nah, sebenernya apa sih Bundler itu? Setidaknya ada 3 istilah yang berbeda namun saling terkait. 3 term itu adalah **Gem, RubyGems, dan Bundler** itu sendiri. 

@@ -1,11 +1,11 @@
 {% extends "layout.html.tpl" %}
 
-{% block title %}{{ siteCategory.name }}{% endblock %}
+{% block title %}{{ category.name }}{% endblock %}
 {% block content %}
-	{% for post in siteCategory.posts %}
+	{% for post in category.posts %}
 	<div class="post">
 		<h2 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-		<p class="meta">Posted by <a href="#">{{ post.author.name }}</a> on {{ post.publishDate }}
+		<p class="meta">Posted by <a href="{{ post.author.url }}">{{ post.author.name }}</a> on {{ post.publishDate }}
 			&nbsp;&bull;&nbsp; <a href="{{ post.url }}" class="permalink">Full article</a></p>
 		<div class="entry">
 			{% if post.excerpt is null %}

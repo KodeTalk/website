@@ -3,13 +3,7 @@ type: post
 layout: post
 title: Membangun Aplikasi Python dengan Menggunakan Flask di OpenShift Part 1: Menyiapkan Environment Lokal
 date: 2013-11-01
-author:
-  name: Eko Wibowo
-  email: eko@kodetalk.com
-  facebook: Your Facebook
-  twitter: Your Twitter
-  github: Your Github
-  signature: Your Signature
+author: eko
 categories: Programming, Cloud, Python
 ---
 ![Alt text](/images/connect-openshift.png)

@@ -3,13 +3,7 @@ type: post
 layout: post
 title: Memanfaatkan Vbox Secara Out of the Box dengan Vagrant
 date: 2013-10-08
-author:
-  name: Glend Maatita
-  email: glend@kodetalk.com
-  facebook: Your Facebook
-  twitter: Your Twitter
-  github: Your Github
-  signature: Your Signature
+author: glend
 categories: Notes, Ruby 
 ---
 

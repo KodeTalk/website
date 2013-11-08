@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : ExtremeSurfing
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20120225
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Pimple - Simple Dependency Injection Container - Let&#039;s Talk About Code</title>
+<link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+  <div id="page">
+    <div id="page-bgtop">
+      <div id="page-bgbtm">
+        <div id="page-content">
+          <div id="header-wrapper">
+            <div id="header">
+              <div id="logo">
+                <h1><a href="#">KodeTalk</a></h1>
+                <p>Let&#039;s Talk About Code</p>
+              </div>
+            </div>
+          </div>
+          <!-- end #header -->
+          <div id="menu-wrapper">
+  <div id="menu">
+    <ul>
+              <li><a href="/index.html">Homepage</a></li>
+              <li><a href="/tolkien.html">Tolkien</a></li>
+          </ul>
+  </div>
+</div>
+<!-- end #menu -->
+<div id="banner"><img src="/images/banner.jpg" width="940" height="300" alt="" /></div>
+          <div id="content">
+            <div class="post">
+	<h2 class="title"><a href="#">Pimple - Simple Dependency Injection Container</a></h2>
+	<p class="meta">Posted by 
+		<a href="/authors/glend.html">Glend Maatita</a> on November 08, 2013 &nbsp;&bull;&nbsp;
+				  <a href="/categories/php.html" class="permalink">Php</a> 
+	  		  <a href="/categories/review.html" class="permalink">Review</a> 
+	  	</p>
+	<div class="entry">
+		<p><a href="http://pimple.sensiolabs.org/">Pimple</a> adalah sebuah library yang digunakan sebagai container untuk melakukan mekanisme Dependency Injection. Pimple sangat simple, hanya terdiri dari sebuah class yang mengextend <a href="http://php.net/manual/en/class.arrayaccess.php">ArrayAccess</a> dengan panjang kode kurang lebih sekitar 50 baris kode. Sebelum tahu cara kerja Pimple, kita harus mengerti terlebih dahulu apa itu dependency injection.</p>
+
+<p><img src="/images/pimple.png" alt="Alt text" /></p>
+
+<p><strong>Dependency Injection (DI)</strong></p>
+
+<p>Sesuai namanya, DI adalah <em>sebuah mekanisme untuk meng-inject/memasukkan dependency ke dalam suatu object/class</em>. Lalu, apa itu <strong>Dependency</strong>? secara singkat, dependency merupakan object atau variable yang dibutuhkan suatu object lain agar object lain tersebut bisa berjalan. Ambil contoh sederhana ketika kita membuat sebuah class yang akan kita gunakan untuk mengirim email. Tentu class tersebut memerlukan class lain (library) yang berfungsi untuk mengirim email. Lihat code dibawah ini</p>
+
+<pre><code>class KirimEmail {
+    private $emailSender;
+
+    public function __construct()
+    {
+        // instantiate lib
+        $this-&gt;emailSender = new EmailSender();
+    }
+
+    public function kirim_email()
+    {
+        // set properties
+        $this-&gt;emailSender-&gt;setSender('glend_maatita@yahoo.com');
+        $this-&gt;emailSender-&gt;setReceiver'anonymous@yahoo.com');
+        $this-&gt;emailSender-&gt;setSubject('Kirim Email');
+        $this-&gt;emailSender-&gt;setMessage('Test kirim email ah !!');
+
+        // send
+        $this-&gt;emailSender-&gt;send();
+    }
+}
+
+// client
+$kirimEmail = new KirimEmail();
+</code></pre>
+
+<p>Dari kode diatas kita bisa tahu kalo class yang kita buat yaitu <strong>KirimEmail</strong> membutuhkan class lain agar bisa berjalan, yaitu class <strong>EmailSender</strong> atau dapat dikatakan kalau class KirimEmail <em>dependent</em> terhadap EmailSender. Inilah yang dinamakan dependency, dan di contoh code diatas kita melakukan instantiate dependency di constructor. Nah DI sendiri merupakan sebuah mekanisme untuk memasukkan suatu dependency ke dalam suatu class sehingga class tersebut <em>tidak perlu melakukan instantiate dependency</em>, class tersebut tinggal <em>meminta</em> dependency yang dia butuhkan. Perhatikan perbedaan code diatas dengan code berikut ini</p>
+
+<pre><code>class KirimEmail {
+    private $emailSender;
+    public function __construct(EmailSender $emailSender)
+    {
+        // Dependency Injection !!
+        $this-&gt;emailSender = $emailSender;
+    }
+
+    public function kirim_email()
+    {
+        // set properties
+        $this-&gt;emailSender-&gt;setSender('glend_maatita@yahoo.com');
+        $this-&gt;emailSender-&gt;setReceiver('anonymous@yahoo.com');
+        $this-&gt;emailSender-&gt;setSubject('Kirim EmaiL');
+        $this-&gt;emailSender-&gt;setMessage('Test kirim email ah !!');
+
+        // send
+        $this-&gt;emailSender-&gt;send();
+    }
+}
+
+// client
+// instantiate dependency here
+$emailSender = new EmailSender();
+// inject dependency !!
+$kirimEmail = new KirimEmail($emailSender);
+</code></pre>
+
+<p>Pada code diatas, kita tidak melakukan intance EmailSender di dalam class KirimEmail !! Kita melakukan hal tersebut di code di client lalu menginject-kannya ke dalam class KirimEmail melalui contructor karena class KirimEmail <em>meminta</em> dependency tersebut melalui contructor nya. Thats it, itulah Dependency Injection ! sesimple itu :D</p>
+
+<p>Cara lainnya untuk melakukan DI adalah melalui <strong>Setter Method</strong>, perhatikan contoh code berikut ini lalu bandingkan dengan code diatas</p>
+
+<pre><code>class KirimEmail
+{
+    private $emailSender;
+    public function __construct(){}
+
+    public function kirim_email()
+    {
+        // set properties
+        $this-&gt;emailSender-&gt;setSender('glend_maatita@yahoo.com');
+        $this-&gt;emailSender-&gt;setReceiver('anonymous@yahoo.com');
+        $this-&gt;emailSender-&gt;setSubject('Kirim Email');
+        $this-&gt;emailSender-&gt;setMessage('Test kirim email ah !!');
+
+        // send
+        $this-&gt;emailSender-&gt;send();
+    }
+
+    // Dependency Injection via setter method !!
+    public function setEmailSender(EmailSender $emailSender)
+    {
+        $this-&gt;emailSender = $emailSender;
+    }
+}
+// client
+// instantiate dependency here
+$emailSender = new EmailSender();
+
+$kirimEmail = new KirimEmail();
+// inject dependency !!
+$kirimEmail-&gt;setEmailSender($emailSender);
+</code></pre>
+
+<p>Pada code diatas kita tidak menginject dependency melalui contructor, akan tetapi melalui method setter :) . Lalu, apa manfaatnya DI ini ? Diantaranya, tak lain dan tak bukan adalah membuat code kita jadi loosely coupled.</p>
+
+<p><strong>Dependency Injection Container</strong></p>
+
+<p>Nah, udah lihat contoh mekanisme DI diatas. Lalu apa hubungannya dengan Pimple? Pimple adalah <strong>Dependency Injection Container</strong>. Pimple adalah container dari dependency-dependency yang akan kita inject-kan. Kita tidak harus menggunakan pimple sebagai container untuk DI, kita bisa gunakan array biasa seperti</p>
+
+<pre><code>$container = array(new Dependency1(), new Dependency2(), new Dependency3())
+</code></pre>
+
+<p>Tapi pimple menawarkan sesuatu yang unik karena Pimple meng-extends apa yang disebut dengan <strong>ArrayAccess</strong>. Dengan ArrayAccess, kita bisa membuat suatu object, dan meng-inject value/object lain dengan cara seperti yang dilakukan oleh array. Terlihat sedikit ajaib. Perhatikan contoh pemakaian pimple berikut</p>
+
+<pre><code>require_once '/path/to/Pimple.php';
+
+$container = new Pimple();
+$container['cookie_name'] = 'SESSION_ID';
+$container['session_storage_class'] = 'SessionStorage';
+</code></pre>
+
+<p>Perhatikan, kita mendefinisikan <strong>$container</strong> sebagai object dari Pimple, <em>bukan</em> array. Tapi kita bisa memasukkan sembarang object atau value dengan cara yang fleksible seperti pada array. Dengan memanfaatkan Pimple yang men-extends ArrayAccess ini, kita bisa membuat container yang sangat fleksible. Misalnya kita bisa meng-extend lagi Pimple di class kita, atau kita bisa memanfaatkan closure seperti kode dibawah ini</p>
+
+<pre><code>$container = new Pimple();
+$container['cookie_name'] = 'SESSION_ID';
+$container['session_storage_class'] = 'SessionStorage';
+
+$container['session_storage'] = function ($container) {
+    return new $container['session_storage_class']($container['cookie_name']);
+};
+
+$container['session'] = function ($c) {
+    return new Session($c['session_storage']);
+};
+</code></pre>
+
+<p>Perhatikan, kita akan meng-inject-kan sebuah object dengan nama <strong>session_storage</strong>, yang mana session session_storage ini adalah instance dari class bernama <strong>SessionStorage</strong> (nama class ini kita inject terlebih dahulu ke $container['session_storage_class'] ) dan mempunyai dependency SESSION_ID ($container['cookie_name']). Dan saat mendefinisikan $container['session_storage'] kita beri parameter <strong>$container</strong> alias container itu sendiri!! Ini yang membuat fleksible dan tidak bisa dilakukan oleh container yang hanya merupakan array biasa.</p>
+
+<p>Jadi, jika kita menggunakan Pimple untuk kode DI kita diatas, kita akan mendapati kode kita seperti ini</p>
+
+<pre><code>class KirimEmail {
+    private $container;
+    public function __construct($container)
+    {
+        $this-&gt;container = $container;
+    }
+
+    public function kirim_email()
+    {
+        // akses object dari Pimple
+        $emailSender = $this-&gt;container['emailSender'];
+        $emailSender-&gt;setSender('glend_maatita@yahoo.com');
+        $emailSender-&gt;setReceiver('anonymous@yahoo.com');
+        $emailSender-&gt;setSubject('Kirim EmaiL');
+        $emailSender-&gt;setMessage('Test kirim email ah !!');
+
+        // send
+        $emailSender-&gt;send();
+    }
+}
+
+// client
+$container = new Pimple();
+$container['emailSender'] = new EmailSender();
+$kirimEmail = new KirimEmail($container);
+</code></pre>
+
+<p>Keuntungan lainnya adalah, Pimple <em>baru akan</em> men-instance suatu class ketika memanggilnya, di contoh diatas, Pimple baru meng-instance class EmailSender ketika mengakses</p>
+
+<pre><code>// akses object dari Pimple
+$emailSender = $this-&gt;container['emailSender'];
+</code></pre>
+
+<p>Jadi kita tidak perlu khawatir performa aplikasi kita akan menurun ketika meng-inject kan banyak object ke Pimple (container).</p>
+
+<p>Yap, sekian pengenalan Pimple, DI Container yang paling simple yang pernah saya pake. Untuk dokumentasi (sedikit) lebih lengkapnya, cek <a href="http://pimple.sensiolabs.org/">official web Pimple</a></p>
+
+<p>Happy Coding !!</p>
+ 
+	</div>
+</div>
+            <div style="clear: both;">&nbsp;</div>
+          </div>
+          <!-- end #content -->
+          <div id="sidebar">
+	<ul>
+		<li>
+			<h2>Situs apa sih ini?</h2>
+			<p>KodeTalk adalah sebuah kumpulan tulisan seputar web development dan programming. Let's talk about code here.</p>
+		</li>
+		<li>
+			<h2>Kategori</h2>
+			<ul>
+					      	<li><a href="/categories/php.html">Php</a></li>
+	      	      	<li><a href="/categories/review.html">Review</a></li>
+	      	      	<li><a href="/categories/ruby.html">Ruby</a></li>
+	      	      	<li><a href="/categories/notes.html">Notes</a></li>
+	      	      	<li><a href="/categories/programming.html">Programming</a></li>
+	      	      	<li><a href="/categories/cloud.html">Cloud</a></li>
+	      	      	<li><a href="/categories/python.html">Python</a></li>
+	      	      	<li><a href="/categories/framework.html">Framework</a></li>
+	      	      	<li><a href="/categories/silex.html">Silex</a></li>
+	      	      	<li><a href="/categories/git.html">Git</a></li>
+	      	      	<li><a href="/categories/emacs.html">Emacs</a></li>
+	      	      	<li><a href="/categories/linux.html">Linux</a></li>
+	      			</ul>
+		</li>							
+	</ul>
+</div>
+<!-- end #sidebar -->        </div>
+        <div style="clear: both;">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+  <!-- end #page -->
+</div>
+<div id="footer">
+	<p>Copyright (c) 2012 KodeTalk.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/"> CSS Templates</a>.</p>
+</div><!-- end #footer -->
+</body>
+</html>

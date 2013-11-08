@@ -3,13 +3,7 @@ type: post
 layout: post
 title: Pengenalan Silex Part 3 - CRUD dengan Doctrine DBAL
 date: 2013-10-30
-author:
-  name: Glend Maatita
-  email: glend@kodetalk.com
-  facebook: Your Facebook
-  twitter: Your Twitter
-  github: Your Github
-  signature: Your Signature
+author: glend
 categories: PHP, Framework, Silex
 ---
 [Doctrine DBAL](http://www.doctrine-project.org/projects/dbal.html) atau Database Access Layer adalah bagian dari project Doctrine ORM yang hanya menyediakan abstraksi ke database dengan memanfaatkan PDO. Tidak seperti induk project nya, yaitu Doctrine ORM yang menyediakan berbagai macam fitur dan memakai arsitektur yang canggih yaitu Data Mapper, Doctrine DBAL lebih simple dan menyediakan hanya beberapa fungsionalitas dasar operasi database seperti database retrieval & manipulation dengan memanfaatkan PDO, plus beberapa fitur tambahan seperti Query Builder untuk mempermudah kita menulis Query SQL.

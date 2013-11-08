@@ -5,7 +5,7 @@
 <div class="post">
 	<h2 class="title"><a href="#">{{ post.title }}</a></h2>
 	<p class="meta">Posted by 
-		<a href="#">{{ post.author.name }}</a> on {{ post.publishDate}} &nbsp;&bull;&nbsp;
+		<a href="{{ post.author.url }}">{{ post.author.name }}</a> on {{ post.publishDate}} &nbsp;&bull;&nbsp;
 		{% for category in post.categories %}
 		  <a href="{{ category.url }}" class="permalink">{{ category.name | capitalize }}</a> 
 	  {% endfor %}

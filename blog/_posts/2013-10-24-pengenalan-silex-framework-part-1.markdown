@@ -3,13 +3,7 @@ type: post
 layout: post
 title: Pengenalan Silex Framework Part 1
 date: 2013-10-24
-author:
-  name: Glend Maatita
-  email: glend@kodetalk.com
-  facebook: Your Facebook
-  twitter: Your Twitter
-  github: Your Github
-  signature: Your Signature
+author: glend
 categories: PHP, Framework, Silex
 ---
 

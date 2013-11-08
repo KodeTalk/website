@@ -3,13 +3,7 @@ type: post
 layout: post
 title: Pengenalan OpenShift : Pengganti Heroku untuk Aplikasi Web Python Anda
 date: 2013-10-31
-author:
-  name: Eko Wibowo
-  email: eko@kodetalk.com
-  facebook: Your Facebook
-  twitter: Your Twitter
-  github: Your Github
-  signature: Your Signature
+author: eko
 categories: Review, Cloud, Python
 ---
 ![Alt text](/images/openshift.png)

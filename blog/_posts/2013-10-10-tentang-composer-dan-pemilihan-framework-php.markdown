@@ -3,13 +3,7 @@ type: post
 layout: post
 title: Tentang Composer dan Pemilihan Framework PHP
 date: 2013-10-10
-author:
-  name: Glend Maatita
-  email: glend@kodetalk.com
-  facebook: Your Facebook
-  twitter: Your Twitter
-  github: Your Github
-  signature: Your Signature
+author: glend
 categories: Notes, PHP
 ---
 
