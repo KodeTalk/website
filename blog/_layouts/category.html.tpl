@@ -1,6 +1,6 @@
 {% extends "layout.html.tpl" %}
 
-{% block title %}{{ category.name }}{% endblock %}
+{% block title %}{{ category.name | capitalize }}{% endblock %}
 {% block content %}
 	{% for post in category.posts %}
 	<div class="post">
