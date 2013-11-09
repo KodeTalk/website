@@ -12,6 +12,7 @@
 		  	{{ post.body | raw }}
 		  {% else %}
 		  	{{ post.excerpt| raw }}
+		  	<p><a href="{{ post.url }}">Selengkapnya..</a></p>
 		  {% endif %}
 		</div>
 	</div>
