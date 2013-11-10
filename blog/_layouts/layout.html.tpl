@@ -19,8 +19,10 @@ Released   : 20120225
 <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href="{{ site.url }}css/style.css" rel="stylesheet" type="text/css" media="screen" />
+{% block commentmoderator %}{% endblock %}
 </head>
 <body>
+{% block fbroot %}{% endblock %}
 <div id="wrapper">
   <div id="page">
     <div id="page-bgtop">
