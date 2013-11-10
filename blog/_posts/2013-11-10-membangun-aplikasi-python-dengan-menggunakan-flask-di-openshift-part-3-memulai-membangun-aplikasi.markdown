@@ -62,7 +62,7 @@ Jika anda bekerja dengan Windows, simak [artikel ini](w.stuartellis.eu/articles/
     
 Dan dari dalam folder *bio*, buat virtual environment dan aktifkan environment tersebut
 
-		~$ cd bio
+	~$ cd bio
     ~$ virtualenv env
     ~$ source env/bin/activate
     
