@@ -1,0 +1,28 @@
+config:
+    name: blog
+    url: /
+    title: KodeTalk
+    tagline: Let's Talk About Code
+    pagination: 10
+dir:
+    post: blog/_posts
+    page: blog/_pages
+    draft: blog/_drafts
+    site: blog/_sites
+    asset: blog/_assets
+    layout: blog/_layouts
+authors:
+    glend:
+        name: 'Glend Maatita'
+        email: glend@kodetalk.com
+        facebook: 'http://facebook.com/glend.maatita'
+        twitter: '@glend_maatita'
+        github: 'http://github.com/glendmaatita'
+        signature: 'Yet Another Author'
+    eko:
+        name: 'Eko S. Wibowo'
+        email: swdev.bali@gmail.com
+        facebook: 'https://www.facebook.com/swdev'
+        twitter: '@swdevbali'
+        github: 'http://github.com/swdevbali'
+        signature: 'One must fully understand the system and all of its intricacies in order to build a computer program'
