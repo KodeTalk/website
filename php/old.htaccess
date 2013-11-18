@@ -1,5 +1,0 @@
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^kodetalk.com$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^www.kodetalk.com$
-RewriteCond %{REQUEST_URI} !blog/_sites/
-RewriteRule (.*) /blog/_sites/$1 [L]
